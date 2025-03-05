@@ -25,7 +25,7 @@
                   "config": {
                     "fallbackDelay": 2.5,
                     "mode": "direct",
-                    "tagPath": "[default]ProjectGlobals/colors/primary_shade"
+                    "tagPath": "[default]ProjectGlobals/colors/primary_tint"
                   },
                   "type": "tag"
                 }
