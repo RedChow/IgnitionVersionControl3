@@ -1,0 +1,16 @@
+{
+  "base": {
+    "style": {
+      "color": "#808080",
+      "fontSize": "25px",
+      "fontStyle": "normal",
+      "fontWeight": "bold",
+      "margin": "0",
+      "marginRight": "2px",
+      "padding": "0",
+      "paddingLeft": "0",
+      "paddingTop": "0",
+      "textAlign": "left"
+    }
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "custom": {},
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\tsystem.perspective.sendMessage(\u0027breakStart\u0027, {\u0027fontSize\u0027:self.params.fontSize, \u0027fontSizeSmall\u0027:self.params.fontSizeSmall})"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {
+    "fontSize": "18pt",
+    "fontSizeSmall": "10pt",
+    "labelColor": "",
+    "oEE": {
+      "label": "OEE",
+      "textColor": "",
+      "value": 52
+    }
+  },
+  "propConfig": {
+    "params.fontSize": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.fontSizeSmall": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.labelColor": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.oEE": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.oEE.label": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.oEE.textColor": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.oEE.value": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 71,
+      "width": 406
+    },
+    "loading": {
+      "mode": "blocking"
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "oeeLabel"
+        },
+        "position": {
+          "basis": "14px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.style.color": {
+            "binding": {
+              "config": {
+                "path": "view.params.labelColor"
+              },
+              "overlayOptOut": true,
+              "type": "property"
+            }
+          },
+          "props.style.fontSize": {
+            "binding": {
+              "config": {
+                "path": "view.params.fontSizeSmall"
+              },
+              "overlayOptOut": true,
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.oEE.label"
+              },
+              "overlayOptOut": true,
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "alignVertical": "bottom",
+          "style": {
+            "classes": "Text/oeeGauge/oeeText",
+            "fontFamily": "sans-serif",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "oeeLabel_0"
+        },
+        "position": {
+          "basis": "10px",
+          "grow": 2,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.style.color": {
+            "binding": {
+              "config": {
+                "path": "view.params.oEE.textColor"
+              },
+              "overlayOptOut": true,
+              "type": "property"
+            }
+          },
+          "props.style.fontSize": {
+            "binding": {
+              "config": {
+                "path": "view.params.fontSize"
+              },
+              "overlayOptOut": true,
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.oEE.value"
+              },
+              "overlayOptOut": true,
+              "transforms": [
+                {
+                  "expression": "{value} + \u0027%\u0027",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "alignVertical": "top",
+          "style": {
+            "classes": "Text/oeeGauge/oeeText",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignItems": "center",
+      "direction": "column",
+      "justify": "center",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

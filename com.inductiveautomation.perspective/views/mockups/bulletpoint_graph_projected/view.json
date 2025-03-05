@@ -1,0 +1,260 @@
+{
+  "custom": {},
+  "params": {
+    "numericValue": 94
+  },
+  "propConfig": {
+    "params.numericValue": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 102,
+      "width": 399
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "height": 32,
+          "width": 355,
+          "x": 20,
+          "y": 31
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#B0C2EE"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 17,
+          "width": 75,
+          "x": 20,
+          "y": 39
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#2D5DCD"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Image"
+        },
+        "position": {
+          "height": 39,
+          "width": 16,
+          "y": 28
+        },
+        "propConfig": {
+          "position.x": {
+            "binding": {
+              "config": {
+                "expression": "{view.params.numericValue}"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value \u003e\u003d 60:\n\t\treturn 7.5*value - 447\n\treturn 3",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "fit": {
+            "mode": "fill"
+          },
+          "source": "/system/images/circ.png",
+          "tint": {
+            "color": "#000000",
+            "enabled": true
+          }
+        },
+        "type": "ia.display.image"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 45,
+          "width": 9,
+          "x": 308,
+          "y": 24.5
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#000000"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 32,
+          "width": 79,
+          "x": 135
+        },
+        "props": {
+          "text": "Projected:"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "position": {
+          "height": 32,
+          "width": 65,
+          "x": 218,
+          "y": -1
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "180000"
+              },
+              "transforms": [
+                {
+                  "formatType": "numeric",
+                  "formatValue": "#,##0",
+                  "type": "format"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "textStyle": {
+            "color": "#2D4BC0"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "height": 32,
+          "width": 79,
+          "x": 35,
+          "y": 69
+        },
+        "props": {
+          "text": "Current:"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_6"
+        },
+        "position": {
+          "height": 32,
+          "width": 79,
+          "x": 207,
+          "y": 69
+        },
+        "props": {
+          "text": "Target:"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_8"
+        },
+        "position": {
+          "height": 32,
+          "width": 65,
+          "x": 103,
+          "y": 68.5
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "180000"
+              },
+              "transforms": [
+                {
+                  "formatType": "numeric",
+                  "formatValue": "#,##0",
+                  "type": "format"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "textStyle": {
+            "color": "#2D4BC0"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_9"
+        },
+        "position": {
+          "height": 32,
+          "width": 65,
+          "x": 289,
+          "y": 68.5
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "180000"
+              },
+              "transforms": [
+                {
+                  "formatType": "numeric",
+                  "formatValue": "#,##0",
+                  "type": "format"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "textStyle": {
+            "color": "#2D4BC0"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.coord"
+  }
+}

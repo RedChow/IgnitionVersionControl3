@@ -1,0 +1,20 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "#34B0FF",
+      "borderStyle": "none",
+      "color": "#FFFFFF",
+      "fontSize": "14px",
+      "lineHeight": "16px",
+      "textTransform": "capitalize"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "hover",
+      "style": {
+        "backgroundColor": "#0D72B633"
+      }
+    }
+  ]
+}

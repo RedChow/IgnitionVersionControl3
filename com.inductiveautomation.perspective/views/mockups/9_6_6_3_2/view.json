@@ -1,0 +1,475 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "width": 986
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "height": 0.64,
+              "width": 0.2288,
+              "x": 0.0125,
+              "y": 0.1531
+            },
+            "props": {
+              "style": {
+                "borderColor": "#A9A9AD",
+                "borderStyle": "solid",
+                "borderWidth": 1
+              },
+              "text": "Electrode Anode",
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "height": 0.64,
+              "width": 0.1207,
+              "x": 0.2558,
+              "y": 0.1527
+            },
+            "props": {
+              "style": {
+                "borderColor": "#A9A9AD",
+                "borderStyle": "solid",
+                "borderWidth": 1
+              },
+              "text": "DATE TIME 12/21 14:00",
+              "textStyle": {
+                "overflowWrap": "break-word",
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "CoordinateContainer"
+        },
+        "position": {
+          "basis": "75px"
+        },
+        "props": {
+          "mode": "percent",
+          "style": {
+            "order": 2
+          }
+        },
+        "type": "ia.container.coord"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "HorizontalMenu"
+            },
+            "position": {
+              "basis": "600px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.itemStyle.backgroundColor": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]project_globals/colors/primary"
+                  },
+                  "type": "tag"
+                }
+              },
+              "props.itemStyle.borderColor": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]project_globals/colors/primary_shade"
+                  },
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "itemStyle": {
+                "borderStyle": "solid",
+                "borderWidth": 1,
+                "fontSize": 14,
+                "fontWeight": "bolder",
+                "margin": 5,
+                "textAlign": "center",
+                "width": "180px"
+              },
+              "items": [
+                {
+                  "enabled": true,
+                  "icon": {
+                    "path": ""
+                  },
+                  "items": [
+                    {
+                      "enabled": true,
+                      "icon": {
+                        "color": "",
+                        "path": "material/link"
+                      },
+                      "items": [],
+                      "label": "Link to Google",
+                      "style": {
+                        "classes": ""
+                      },
+                      "target": "http://www.google.com"
+                    }
+                  ],
+                  "label": "Production Heat Map",
+                  "style": {
+                    "classes": "",
+                    "overflowWrap": "break-word",
+                    "textAlign": "center"
+                  },
+                  "target": ""
+                },
+                {
+                  "enabled": true,
+                  "icon": {
+                    "color": "",
+                    "path": ""
+                  },
+                  "items": [],
+                  "label": "ANDON Help Viewer",
+                  "style": {
+                    "classes": ""
+                  },
+                  "target": "http://www.google.com"
+                },
+                {
+                  "enabled": true,
+                  "icon": {
+                    "path": ""
+                  },
+                  "items": [],
+                  "label": "MOM Machine WO Data",
+                  "style": {
+                    "classes": ""
+                  },
+                  "target": ""
+                },
+                {
+                  "enabled": true,
+                  "icon": {
+                    "path": ""
+                  },
+                  "items": [],
+                  "label": "Production Machine Advisor",
+                  "style": {
+                    "classes": ""
+                  },
+                  "target": ""
+                },
+                {
+                  "enabled": true,
+                  "icon": {
+                    "path": ""
+                  },
+                  "items": [],
+                  "label": "Digital Boards",
+                  "style": {
+                    "backgroundColor": "#A5D3FF",
+                    "classes": ""
+                  },
+                  "target": ""
+                },
+                {
+                  "enabled": true,
+                  "icon": {
+                    "path": ""
+                  },
+                  "items": [],
+                  "label": "Equipment List",
+                  "style": {
+                    "classes": ""
+                  },
+                  "target": ""
+                },
+                {
+                  "enabled": true,
+                  "icon": {
+                    "path": ""
+                  },
+                  "items": [
+                    {
+                      "enabled": true,
+                      "icon": {
+                        "color": "",
+                        "path": ""
+                      },
+                      "items": [],
+                      "label": "Shop Floor",
+                      "style": {
+                        "classes": ""
+                      },
+                      "target": ""
+                    },
+                    {
+                      "enabled": true,
+                      "icon": {
+                        "color": "",
+                        "path": ""
+                      },
+                      "items": [],
+                      "label": "Shop Floor",
+                      "style": {
+                        "classes": ""
+                      },
+                      "target": ""
+                    },
+                    {
+                      "enabled": true,
+                      "icon": {
+                        "color": "",
+                        "path": ""
+                      },
+                      "items": [],
+                      "label": "Energy, Water, Gas",
+                      "style": {
+                        "classes": ""
+                      },
+                      "target": ""
+                    },
+                    {
+                      "enabled": true,
+                      "icon": {
+                        "color": "",
+                        "path": ""
+                      },
+                      "items": [],
+                      "label": "Production Configuration",
+                      "style": {
+                        "classes": ""
+                      },
+                      "target": ""
+                    }
+                  ],
+                  "label": "Applications",
+                  "style": {
+                    "classes": ""
+                  },
+                  "target": ""
+                }
+              ],
+              "style": {
+                "backgroundColor": "#FFFFFF",
+                "borderStyle": "none",
+                "borderWidth": 1,
+                "overflow": "hidden",
+                "overflowX": "visible",
+                "overflowY": "hidden"
+              }
+            },
+            "type": "ia.navigation.horizontalmenu"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_0"
+        },
+        "position": {
+          "basis": "75px"
+        },
+        "props": {
+          "style": {
+            "order": 1,
+            "overflow": "visible",
+            "overflowX": "visible",
+            "overflowY": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "EmbeddedView"
+            },
+            "position": {
+              "height": 56,
+              "width": 400,
+              "x": 117,
+              "y": 12
+            },
+            "props": {
+              "params": {
+                "numericValue": 94
+              },
+              "path": "mockups/bulletpoint_graph"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "EmbeddedView_0"
+            },
+            "position": {
+              "height": 56,
+              "width": 400,
+              "x": 117,
+              "y": 68
+            },
+            "props": {
+              "params": {
+                "numericValue": 96
+              },
+              "path": "mockups/bulletpoint_graph"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "EmbeddedView_1"
+            },
+            "position": {
+              "height": 56,
+              "width": 400,
+              "x": 117,
+              "y": 124
+            },
+            "props": {
+              "params": {
+                "numericValue": 82
+              },
+              "path": "mockups/bulletpoint_graph"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "EmbeddedView_2"
+            },
+            "position": {
+              "height": 56,
+              "width": 400,
+              "x": 117,
+              "y": 180
+            },
+            "props": {
+              "params": {
+                "numericValue": 89
+              },
+              "path": "mockups/bulletpoint_graph"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "height": 32,
+              "width": 109,
+              "x": 18,
+              "y": 23
+            },
+            "props": {
+              "text": "Availability"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "height": 32,
+              "width": 113,
+              "x": 16,
+              "y": 80
+            },
+            "props": {
+              "text": "Performance"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "height": 32,
+              "width": 113,
+              "x": 16,
+              "y": 138
+            },
+            "props": {
+              "text": "Quality"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_2"
+            },
+            "position": {
+              "height": 32,
+              "width": 113,
+              "x": 16,
+              "y": 193
+            },
+            "props": {
+              "text": "OEE"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Image"
+            },
+            "position": {
+              "height": 58,
+              "width": 58,
+              "x": 559,
+              "y": 447
+            },
+            "props": {
+              "source": "/system/images/empty-20.svg"
+            },
+            "type": "ia.display.image"
+          }
+        ],
+        "meta": {
+          "name": "CoordinateContainer_2"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "props": {
+          "style": {
+            "order": 3
+          }
+        },
+        "type": "ia.container.coord"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

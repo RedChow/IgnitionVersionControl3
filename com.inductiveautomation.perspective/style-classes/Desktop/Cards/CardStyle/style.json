@@ -1,0 +1,17 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "#FFFFFF",
+      "borderColor": "#FFFFFF",
+      "borderStyle": "solid",
+      "borderWidth": "4px",
+      "borderRadius": "20px",
+      "boxShadow": "1px 1px 1px #808080",
+      "margin": "6px",
+      "paddingBottom": "0.05em",
+      "paddingLeft": "0.05em",
+      "paddingRight": "0.05em",
+      "paddingTop": "0.05em"
+    }
+  }
+}

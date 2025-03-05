@@ -1,0 +1,13 @@
+{
+  "base": {
+    "style": {
+      "cursor": "pointer",
+      "paddingBottom": "0.5em",
+      "paddingLeft": "0.5em",
+      "paddingRight": "0.5em",
+      "paddingTop": "0.5em",
+      "stroke": "inherit",
+      "fill": "#808080"
+    }
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 48,
+      "width": 340
+    },
+    "inputBehavior": "merge"
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "HorizontalMenu"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "props.items[0].style.backgroundColor": {
+            "binding": {
+              "config": {
+                "expression": "{session.custom.horizontalMenuItem} \u003d \"Production Advisor\""
+              },
+              "transforms": [
+                {
+                  "fallback": null,
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": true,
+                      "output": "#93DBFF"
+                    },
+                    {
+                      "input": false,
+                      "output": null
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.items[1].style.fontWeight": {
+            "binding": {
+              "config": {
+                "path": "page.props.path"
+              },
+              "transforms": [
+                {
+                  "expression": "if ({value} \u003d {this.props.items[1].target}, \"bold\", \"normal\")",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.items[2].style.fontWeight": {
+            "binding": {
+              "config": {
+                "path": "page.props.path"
+              },
+              "transforms": [
+                {
+                  "expression": "if ({value} \u003d {this.props.items[2].target}, \"bold\", \"normal\")",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "itemStyle": {
+            "classes": "Menu/Item_Horizontal"
+          },
+          "items": [
+            {
+              "enabled": true,
+              "icon": {
+                "path": ""
+              },
+              "items": [],
+              "label": "Production Advisor",
+              "style": {
+                "borderRightColor": "#FFFFFF",
+                "borderRightStyle": "solid",
+                "borderRightWidth": "1px",
+                "classes": "",
+                "fontWeight": "normal"
+              },
+              "target": "/"
+            },
+            {
+              "enabled": true,
+              "icon": {
+                "path": ""
+              },
+              "items": [],
+              "label": "ANDON",
+              "style": {
+                "borderRightColor": "#FFFFFF",
+                "borderRightStyle": "solid",
+                "borderRightWidth": "1px",
+                "classes": ""
+              },
+              "target": "/charts"
+            },
+            {
+              "enabled": true,
+              "icon": {
+                "path": ""
+              },
+              "items": [],
+              "label": "Maintenance",
+              "style": {
+                "borderRightColor": "#FFFFFF",
+                "borderRightStyle": "solid",
+                "borderRightWidth": "1px",
+                "classes": ""
+              },
+              "target": "/alarms"
+            },
+            {
+              "enabled": true,
+              "icon": {
+                "path": ""
+              },
+              "items": [],
+              "label": "Digital Boards",
+              "style": {
+                "borderRightColor": "#FFFFFF",
+                "borderRightStyle": "solid",
+                "borderRightWidth": "1px",
+                "classes": "",
+                "fontWeight": "normal"
+              },
+              "target": "/alarms"
+            },
+            {
+              "enabled": true,
+              "icon": {
+                "path": ""
+              },
+              "items": [
+                {
+                  "enabled": true,
+                  "icon": {
+                    "path": ""
+                  },
+                  "items": [],
+                  "label": "User Setup",
+                  "style": {
+                    "classes": ""
+                  },
+                  "target": ""
+                }
+              ],
+              "label": "Managers",
+              "style": {
+                "classes": "",
+                "fontWeight": "normal"
+              },
+              "target": ""
+            }
+          ],
+          "style": {
+            "classes": "Menu/Menu_Horizontal"
+          }
+        },
+        "type": "ia.navigation.horizontalmenu"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.flex"
+  }
+}

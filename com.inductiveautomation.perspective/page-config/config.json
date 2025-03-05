@@ -1,0 +1,67 @@
+{
+  "pages": {
+    "/": {
+      "viewPath": "Page/Home"
+    },
+    "/alarms": {
+      "viewPath": "Page/Alarms"
+    },
+    "/charts": {
+      "viewPath": "Page/Charts"
+    },
+    "/collapsingnav": {
+      "viewPath": "Navigation/CollapsingNav"
+    },
+    "/digitalboards": {
+      "title": "",
+      "viewPath": "mockups/9_6_6_3_2"
+    },
+    "/new-page": {
+      "title": "",
+      "viewPath": ""
+    },
+    "/t": {
+      "title": "",
+      "viewPath": "mockups/PlantOverview9_6_4_2"
+    },
+    "/t2": {
+      "title": "",
+      "viewPath": "Page/test2"
+    }
+  },
+  "sharedDocks": {
+    "bottom": [
+      {
+        "anchor": "fixed",
+        "autoBreakpoint": 480,
+        "content": "auto",
+        "handle": "hide",
+        "iconUrl": "",
+        "id": "alarmdock",
+        "modal": false,
+        "resizable": true,
+        "show": "onDemand",
+        "size": 150,
+        "viewParams": {},
+        "viewPath": "mockups/AlarmView"
+      }
+    ],
+    "cornerPriority": "top-bottom",
+    "left": [
+      {
+        "anchor": "fixed",
+        "autoBreakpoint": 768,
+        "content": "push",
+        "handle": "hide",
+        "iconUrl": "",
+        "id": "menu",
+        "modal": false,
+        "resizable": false,
+        "show": "visible",
+        "size": 210,
+        "viewParams": {},
+        "viewPath": "Navigation/embeddedNavigation"
+      }
+    ]
+  }
+}

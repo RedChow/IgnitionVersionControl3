@@ -1,0 +1,92 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 57
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "FlexRepeater"
+        },
+        "position": {
+          "basis": "600px",
+          "grow": 1
+        },
+        "props": {
+          "instances": [
+            {
+              "icon": "material/home",
+              "instancePosition": {},
+              "instanceStyle": {
+                "classes": ""
+              },
+              "label": "Production Setup"
+            },
+            {
+              "icon": "value",
+              "instancePosition": {},
+              "instanceStyle": {
+                "classes": ""
+              },
+              "items": [
+                {
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  },
+                  "label": "Formulation",
+                  "target": "/formulation"
+                },
+                {
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  },
+                  "label": "Production Data",
+                  "target": "/production"
+                },
+                {
+                  "instancePosition": {},
+                  "instanceStyle": {
+                    "classes": ""
+                  },
+                  "label": "Raw Material",
+                  "target": "/material"
+                },
+                {
+                  "instancePosition": [],
+                  "instanceStyle": [],
+                  "label": "Label Printing",
+                  "target": "/label-printing"
+                },
+                {
+                  "instancePosition": {},
+                  "instanceStyle": {},
+                  "label": "SAP Submission",
+                  "target": "/sap"
+                },
+                {
+                  "instancePosition": {},
+                  "instanceStyle": {},
+                  "label": "Planned Orders",
+                  "target": "/production/planned-orders"
+                }
+              ],
+              "label": "link 2"
+            }
+          ],
+          "path": "Navigation/CollapsingNav-link"
+        },
+        "type": "ia.display.flex-repeater"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.flex"
+  }
+}

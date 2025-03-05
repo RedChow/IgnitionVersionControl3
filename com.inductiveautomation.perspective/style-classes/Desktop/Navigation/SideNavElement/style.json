@@ -1,0 +1,16 @@
+{
+  "base": {
+    "style": {
+      "color": "#555555",
+      "cursor": "pointer",
+      "fontWeight": "bold",
+      "marginBottom": "5px",
+      "outlineColor": "#D5D5D5",
+      "outlineStyle": "solid",
+      "outlineWidth": "1",
+      "paddingBottom": "0.2em",
+      "paddingLeft": "0.2em",
+      "paddingTop": "0.2em"
+    }
+  }
+}

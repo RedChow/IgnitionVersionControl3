@@ -1,0 +1,1135 @@
+{
+  "custom": {},
+  "params": {
+    "isTopLevel": false
+  },
+  "propConfig": {
+    "params.isTopLevel": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 925,
+      "width": 274
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Image"
+            },
+            "position": {
+              "basis": "100px",
+              "grow": 1
+            },
+            "props": {
+              "fit": {
+                "mode": "contain"
+              },
+              "source": "/system/images/act/act_logo_1.png"
+            },
+            "type": "ia.display.image"
+          },
+          {
+            "meta": {
+              "name": "Image_0"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "type": "ia.display.image"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "200px"
+        },
+        "props": {
+          "direction": "column"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "custom": {
+          "currentNav": "Electrode Anode"
+        },
+        "meta": {
+          "name": "FlexRepeater"
+        },
+        "position": {
+          "basis": "475px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.instances[0].rootElement.selected": {
+            "binding": {
+              "config": {
+                "expression": "{this.custom.currentNav} \u003d {this.props.instances[0].rootElement.labelText}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.instances[0].subElements[0].selected": {
+            "binding": {
+              "config": {
+                "expression": "{this.custom.currentNav} \u003d {this.props.instances[0].subElements[0].treePath}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.instances[0].subElements[1].selected": {
+            "binding": {
+              "config": {
+                "expression": "{this.custom.currentNav} \u003d {this.props.instances[0].subElements[1].treePath}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.instances[0].subElements[2].selected": {
+            "binding": {
+              "config": {
+                "expression": "{this.custom.currentNav} \u003d {this.props.instances[0].subElements[2].treePath}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.instances[1].rootElement.selected": {
+            "binding": {
+              "config": {
+                "expression": "({this.custom.currentNav} \u003d {this.props.instances[1].rootElement.labelText}) \u0026\u0026 {view.params.isTopLevel}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "direction": "column",
+          "elementPosition": {
+            "basis": "auto",
+            "grow": 0,
+            "shrink": 0
+          },
+          "instances": [
+            {
+              "instanceStyle": {
+                "classes": "",
+                "fontWeight": "bold"
+              },
+              "rootElement": {
+                "id": 100,
+                "isOpened": 0,
+                "labelText": "Electrode Cathode",
+                "materialIcon": "",
+                "navId": 1,
+                "pageUrl": ""
+              },
+              "subElements": [
+                {
+                  "icon": {
+                    "elements": [],
+                    "viewBox": "0 0 1 1"
+                  },
+                  "id": -1,
+                  "instanceStyle": {
+                    "backgroundColor": "",
+                    "classes": ""
+                  },
+                  "labelText": "Coating Machine",
+                  "materialIcon": "",
+                  "pageUrl": "/t",
+                  "parentId": 100,
+                  "treePath": "Cathode Electrode/Coating Machine",
+                  "viewParams": {},
+                  "viewPath": "mockups/PlantOverview9_6_4_2"
+                },
+                {
+                  "icon": {
+                    "elements": [],
+                    "viewBox": "0 0 1 1"
+                  },
+                  "id": -2,
+                  "instanceStyle": {
+                    "backgroundColor": "",
+                    "classes": ""
+                  },
+                  "labelText": "Cathode Power",
+                  "materialIcon": "",
+                  "pageUrl": "/t2",
+                  "parentId": 100,
+                  "treePath": "Cathode Electrode/Cathode Powder",
+                  "viewParams": {},
+                  "viewPath": "Page/test2"
+                },
+                {
+                  "icon": {
+                    "elements": [],
+                    "viewBox": "0 0 1 1"
+                  },
+                  "id": -1,
+                  "instanceStyle": {
+                    "backgroundColor": "",
+                    "classes": ""
+                  },
+                  "labelText": "Ceramic Powder",
+                  "materialIcon": "",
+                  "pageUrl": "/ops/LineStatus/Molding",
+                  "parentId": 100,
+                  "treePath": "Cathode Electrode/Ceramic Powder",
+                  "viewParams": {
+                    "area": "Molding"
+                  },
+                  "viewPath": "Ops/TechnicianView/productionStatus"
+                },
+                {
+                  "icon": {
+                    "elements": [],
+                    "viewBox": "0 0 1 1"
+                  },
+                  "id": -1,
+                  "instanceStyle": {
+                    "backgroundColor": "",
+                    "classes": ""
+                  },
+                  "labelText": "Cathode Calendering",
+                  "materialIcon": "",
+                  "pageUrl": "/production/troubleCall/Molding",
+                  "parentId": 100,
+                  "selected": 0,
+                  "treePath": "Cathode Electrode/Ceramic Powder",
+                  "viewParams": {
+                    "area": "Molding"
+                  },
+                  "viewPath": "app/operations/main/troubleCall/troubleCallDashboard_area"
+                }
+              ],
+              "subSubElements": []
+            },
+            {
+              "instanceStyle": {
+                "classes": "",
+                "fontWeight": "bold"
+              },
+              "rootElement": {
+                "icon": {
+                  "elements": [
+                    {
+                      "d": "M4,11.25H1.25a.63.63,0,0,1-.62-.73C1,8.12,2.93.63,11.13.63s10.09,7.49,10.48,9.89a.62.62,0,0,1-.62.73H18.17",
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "path",
+                      "stroke": {
+                        "linecap": "round",
+                        "miterlimit": "10",
+                        "paint": "#B0B0B0",
+                        "width": "1.25px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "line",
+                      "stroke": {
+                        "linecap": "round",
+                        "miterlimit": "10",
+                        "paint": "#B0B0B0",
+                        "width": "1.25px"
+                      },
+                      "style": {},
+                      "type": "line",
+                      "x1": "4.04",
+                      "x2": "6.39",
+                      "y1": "3.39",
+                      "y2": "5.75"
+                    },
+                    {
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "line",
+                      "stroke": {
+                        "linecap": "round",
+                        "miterlimit": "10",
+                        "paint": "#B0B0B0",
+                        "width": "1.25px"
+                      },
+                      "style": {},
+                      "type": "line",
+                      "x1": "11.13",
+                      "x2": "11.13",
+                      "y1": "0.63",
+                      "y2": "3.82"
+                    },
+                    {
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "line",
+                      "stroke": {
+                        "linecap": "round",
+                        "miterlimit": "10",
+                        "paint": "#B0B0B0",
+                        "width": "1.25px"
+                      },
+                      "style": {},
+                      "type": "line",
+                      "x1": "18.22",
+                      "x2": "15.87",
+                      "y1": "3.39",
+                      "y2": "5.74"
+                    },
+                    {
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "line",
+                      "stroke": {
+                        "linecap": "round",
+                        "miterlimit": "10",
+                        "paint": "#B0B0B0",
+                        "width": "1.25px"
+                      },
+                      "style": {},
+                      "type": "line",
+                      "x1": "7.78",
+                      "x2": "9.86",
+                      "y1": "8.7",
+                      "y2": "9.87"
+                    },
+                    {
+                      "cx": "11.06",
+                      "cy": "10.84",
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "circle",
+                      "r": "1.28",
+                      "stroke": {
+                        "linecap": "round",
+                        "miterlimit": "10",
+                        "paint": "#B0B0B0",
+                        "width": "1.25px"
+                      },
+                      "style": {},
+                      "type": "circle"
+                    }
+                  ],
+                  "viewBox": "0 0 22 11.5"
+                },
+                "id": 99,
+                "isOpened": 0,
+                "labelText": "Electrode Anode",
+                "materialIcon": "",
+                "navId": 1,
+                "pageUrl": "",
+                "treePath": "Electrode Anode"
+              },
+              "subElements": [
+                {
+                  "icon": {
+                    "elements": [],
+                    "viewBox": "0 0 1 1"
+                  },
+                  "id": -1,
+                  "instanceStyle": {
+                    "backgroundColor": "",
+                    "classes": ""
+                  },
+                  "labelText": "TBD Run Right",
+                  "pageUrl": "/dashboard/summary/molding",
+                  "parentId": 99,
+                  "selected": 0,
+                  "treePath": "Printing/Run Right",
+                  "viewParams": {},
+                  "viewPath": "Ops/Molding/SupervisorRunRight/BreakpointSummary"
+                },
+                {
+                  "icon": {
+                    "elements": [],
+                    "viewBox": "0 0 1 1"
+                  },
+                  "id": -1,
+                  "instanceStyle": {
+                    "backgroundColor": "",
+                    "classes": ""
+                  },
+                  "labelText": "TBD Daily Ops Review",
+                  "pageUrl": "/dashboard/summary/molding",
+                  "parentId": 99,
+                  "selected": 0,
+                  "treePath": "Printing/Daily Ops Review",
+                  "viewParams": {},
+                  "viewPath": "Ops/Molding/SupervisorRunRight/BreakpointSummary"
+                },
+                {
+                  "icon": {
+                    "elements": [],
+                    "viewBox": "0 0 1 1"
+                  },
+                  "id": -1,
+                  "instanceStyle": {
+                    "backgroundColor": "",
+                    "classes": ""
+                  },
+                  "labelText": "Technicain View",
+                  "pageUrl": "/ops/LineStatus/Printing",
+                  "parentId": 100,
+                  "selected": 0,
+                  "treePath": "Printing/Trouble Calls",
+                  "viewParams": {
+                    "area": "Printing"
+                  },
+                  "viewPath": "Ops/TechnicianView/productionStatus"
+                },
+                {
+                  "icon": {
+                    "elements": [],
+                    "viewBox": "0 0 1 1"
+                  },
+                  "id": -1,
+                  "instanceStyle": {
+                    "backgroundColor": "",
+                    "classes": ""
+                  },
+                  "labelText": "Trouble Calls",
+                  "pageUrl": "/production/troubleCall/Printing",
+                  "parentId": 99,
+                  "selected": 0,
+                  "treePath": "Printing/Trouble Calls",
+                  "viewParams": {
+                    "area": "Printing"
+                  },
+                  "viewPath": "app/operations/main/troubleCall/troubleCallDashboard_area"
+                },
+                {
+                  "icon": {
+                    "elements": [],
+                    "viewBox": "0 0 1 1"
+                  },
+                  "id": -1,
+                  "instanceStyle": {
+                    "backgroundColor": "",
+                    "classes": ""
+                  },
+                  "labelText": "TBD Analytics",
+                  "pageUrl": "/production/troubleCall/Molding",
+                  "parentId": 99,
+                  "selected": 0,
+                  "treePath": "Printing/Analytics",
+                  "viewParams": {
+                    "area": "Molding"
+                  },
+                  "viewPath": "app/operations/main/troubleCall/troubleCallDashboard_area"
+                }
+              ],
+              "subSubElements": []
+            },
+            {
+              "instanceStyle": {
+                "classes": "",
+                "fontWeight": "bold"
+              },
+              "rootElement": {
+                "icon": {
+                  "elements": [
+                    {
+                      "d": "M4,11.25H1.25a.63.63,0,0,1-.62-.73C1,8.12,2.93.63,11.13.63s10.09,7.49,10.48,9.89a.62.62,0,0,1-.62.73H18.17",
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "path",
+                      "stroke": {
+                        "linecap": "round",
+                        "miterlimit": "10",
+                        "paint": "#B0B0B0",
+                        "width": "1.25px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "line",
+                      "stroke": {
+                        "linecap": "round",
+                        "miterlimit": "10",
+                        "paint": "#B0B0B0",
+                        "width": "1.25px"
+                      },
+                      "style": {},
+                      "type": "line",
+                      "x1": "4.04",
+                      "x2": "6.39",
+                      "y1": "3.39",
+                      "y2": "5.75"
+                    },
+                    {
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "line",
+                      "stroke": {
+                        "linecap": "round",
+                        "miterlimit": "10",
+                        "paint": "#B0B0B0",
+                        "width": "1.25px"
+                      },
+                      "style": {},
+                      "type": "line",
+                      "x1": "11.13",
+                      "x2": "11.13",
+                      "y1": "0.63",
+                      "y2": "3.82"
+                    },
+                    {
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "line",
+                      "stroke": {
+                        "linecap": "round",
+                        "miterlimit": "10",
+                        "paint": "#B0B0B0",
+                        "width": "1.25px"
+                      },
+                      "style": {},
+                      "type": "line",
+                      "x1": "18.22",
+                      "x2": "15.87",
+                      "y1": "3.39",
+                      "y2": "5.74"
+                    },
+                    {
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "line",
+                      "stroke": {
+                        "linecap": "round",
+                        "miterlimit": "10",
+                        "paint": "#B0B0B0",
+                        "width": "1.25px"
+                      },
+                      "style": {},
+                      "type": "line",
+                      "x1": "7.78",
+                      "x2": "9.86",
+                      "y1": "8.7",
+                      "y2": "9.87"
+                    },
+                    {
+                      "cx": "11.06",
+                      "cy": "10.84",
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "circle",
+                      "r": "1.28",
+                      "stroke": {
+                        "linecap": "round",
+                        "miterlimit": "10",
+                        "paint": "#B0B0B0",
+                        "width": "1.25px"
+                      },
+                      "style": {},
+                      "type": "circle"
+                    }
+                  ],
+                  "viewBox": "0 0 22 11.5"
+                },
+                "id": 98,
+                "isOpened": 0,
+                "labelText": "Assembly",
+                "materialIcon": "",
+                "navId": 1,
+                "pageUrl": "",
+                "selected": 0
+              },
+              "subElements": [
+                {
+                  "icon": {
+                    "elements": [],
+                    "viewBox": "0 0 1 1"
+                  },
+                  "id": -1,
+                  "instanceStyle": {
+                    "backgroundColor": "",
+                    "classes": ""
+                  },
+                  "labelText": "Run Right",
+                  "pageUrl": "/dashboard/summary/assembly",
+                  "parentId": 98,
+                  "selected": 0,
+                  "treePath": "Assembly/Run Right",
+                  "viewParams": {},
+                  "viewPath": "Ops/Assembly/SupervisorRunRight/BreakpointSummary"
+                },
+                {
+                  "icon": {
+                    "elements": [],
+                    "viewBox": "0 0 1 1"
+                  },
+                  "id": -1,
+                  "instanceStyle": {
+                    "backgroundColor": "",
+                    "classes": ""
+                  },
+                  "labelText": "TBD Daily Ops Review",
+                  "pageUrl": "/dashboard/summary/molding",
+                  "parentId": 98,
+                  "selected": 0,
+                  "treePath": "Assembly/Daily Ops Review",
+                  "viewParams": {},
+                  "viewPath": "Ops/Molding/SupervisorRunRight/BreakpointSummary"
+                },
+                {
+                  "icon": {
+                    "elements": [],
+                    "viewBox": "0 0 1 1"
+                  },
+                  "id": -1,
+                  "instanceStyle": {
+                    "backgroundColor": "",
+                    "classes": ""
+                  },
+                  "labelText": "Technicain View",
+                  "pageUrl": "/ops/LineStatus/Printing",
+                  "parentId": 100,
+                  "selected": 0,
+                  "treePath": "Assembly/Trouble Calls",
+                  "viewParams": {
+                    "area": "Assembly"
+                  },
+                  "viewPath": "Ops/TechnicianView/productionStatus"
+                },
+                {
+                  "icon": {
+                    "elements": [],
+                    "viewBox": "0 0 1 1"
+                  },
+                  "id": -1,
+                  "instanceStyle": {
+                    "backgroundColor": "",
+                    "classes": ""
+                  },
+                  "labelText": "Trouble Calls",
+                  "pageUrl": "/production/troubleCall/Assembly",
+                  "parentId": 98,
+                  "selected": 0,
+                  "treePath": "Assembly/Trouble Calls",
+                  "viewParams": {
+                    "area": "Assembly"
+                  },
+                  "viewPath": "app/operations/main/troubleCall/troubleCallDashboard_area"
+                },
+                {
+                  "icon": {
+                    "elements": [],
+                    "viewBox": "0 0 1 1"
+                  },
+                  "id": -1,
+                  "instanceStyle": {
+                    "backgroundColor": "",
+                    "classes": ""
+                  },
+                  "labelText": "TBD Analytics",
+                  "pageUrl": "/production/troubleCall/Molding",
+                  "parentId": 98,
+                  "selected": 0,
+                  "treePath": "Assembly/Analytics",
+                  "viewParams": {
+                    "area": "Molding"
+                  },
+                  "viewPath": "app/operations/main/troubleCall/troubleCallDashboard_area"
+                }
+              ],
+              "subSubElements": []
+            },
+            {
+              "instanceStyle": {
+                "classes": "",
+                "fontWeight": "bold"
+              },
+              "rootElement": {
+                "icon": {
+                  "elements": [
+                    {
+                      "d": "M4,11.25H1.25a.63.63,0,0,1-.62-.73C1,8.12,2.93.63,11.13.63s10.09,7.49,10.48,9.89a.62.62,0,0,1-.62.73H18.17",
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "path",
+                      "stroke": {
+                        "linecap": "round",
+                        "miterlimit": "10",
+                        "paint": "#B0B0B0",
+                        "width": "1.25px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "line",
+                      "stroke": {
+                        "linecap": "round",
+                        "miterlimit": "10",
+                        "paint": "#B0B0B0",
+                        "width": "1.25px"
+                      },
+                      "style": {},
+                      "type": "line",
+                      "x1": "4.04",
+                      "x2": "6.39",
+                      "y1": "3.39",
+                      "y2": "5.75"
+                    },
+                    {
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "line",
+                      "stroke": {
+                        "linecap": "round",
+                        "miterlimit": "10",
+                        "paint": "#B0B0B0",
+                        "width": "1.25px"
+                      },
+                      "style": {},
+                      "type": "line",
+                      "x1": "11.13",
+                      "x2": "11.13",
+                      "y1": "0.63",
+                      "y2": "3.82"
+                    },
+                    {
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "line",
+                      "stroke": {
+                        "linecap": "round",
+                        "miterlimit": "10",
+                        "paint": "#B0B0B0",
+                        "width": "1.25px"
+                      },
+                      "style": {},
+                      "type": "line",
+                      "x1": "18.22",
+                      "x2": "15.87",
+                      "y1": "3.39",
+                      "y2": "5.74"
+                    },
+                    {
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "line",
+                      "stroke": {
+                        "linecap": "round",
+                        "miterlimit": "10",
+                        "paint": "#B0B0B0",
+                        "width": "1.25px"
+                      },
+                      "style": {},
+                      "type": "line",
+                      "x1": "7.78",
+                      "x2": "9.86",
+                      "y1": "8.7",
+                      "y2": "9.87"
+                    },
+                    {
+                      "cx": "11.06",
+                      "cy": "10.84",
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "circle",
+                      "r": "1.28",
+                      "stroke": {
+                        "linecap": "round",
+                        "miterlimit": "10",
+                        "paint": "#B0B0B0",
+                        "width": "1.25px"
+                      },
+                      "style": {},
+                      "type": "circle"
+                    }
+                  ],
+                  "viewBox": "0 0 22 11.5"
+                },
+                "id": 97,
+                "isOpened": 0,
+                "labelText": "Cell Formation",
+                "materialIcon": "",
+                "navId": 1,
+                "pageUrl": "",
+                "selected": 0
+              },
+              "subElements": [
+                {
+                  "icon": {
+                    "elements": [],
+                    "viewBox": "0 0 1 1"
+                  },
+                  "id": -1,
+                  "instanceStyle": {
+                    "backgroundColor": "",
+                    "classes": ""
+                  },
+                  "labelText": "TBD Run Right",
+                  "pageUrl": "/dashboard/summary/packaging",
+                  "parentId": 97,
+                  "selected": 0,
+                  "treePath": "Packaging/Run Right",
+                  "viewParams": {},
+                  "viewPath": "Ops/Packaging/SupervisorRunRight/BreakpointSummary"
+                },
+                {
+                  "icon": {
+                    "elements": [],
+                    "viewBox": "0 0 1 1"
+                  },
+                  "id": -1,
+                  "instanceStyle": {
+                    "backgroundColor": "",
+                    "classes": ""
+                  },
+                  "labelText": "TBD Daily Ops Review",
+                  "pageUrl": "/dashboard/summary/molding",
+                  "parentId": 97,
+                  "selected": 0,
+                  "treePath": "Packaging/Daily Ops Review",
+                  "viewParams": {},
+                  "viewPath": "Ops/Packaging/SupervisorRunRight/BreakpointSummary"
+                },
+                {
+                  "icon": {
+                    "elements": [],
+                    "viewBox": "0 0 1 1"
+                  },
+                  "id": -1,
+                  "instanceStyle": {
+                    "backgroundColor": "",
+                    "classes": ""
+                  },
+                  "labelText": "TBD Technicain View",
+                  "pageUrl": "/ops/LineStatus/Packaging",
+                  "parentId": 100,
+                  "selected": 0,
+                  "treePath": "Packaging/Trouble Calls",
+                  "viewParams": {
+                    "area": "Packaging"
+                  },
+                  "viewPath": "Ops/TechnicianView/productionStatus"
+                },
+                {
+                  "icon": {
+                    "elements": [],
+                    "viewBox": "0 0 1 1"
+                  },
+                  "id": -1,
+                  "instanceStyle": {
+                    "backgroundColor": "",
+                    "classes": ""
+                  },
+                  "labelText": "Trouble Calls",
+                  "pageUrl": "/production/troubleCall/Packaging",
+                  "parentId": 97,
+                  "selected": 0,
+                  "treePath": "Packaging/Trouble Calls",
+                  "viewParams": {
+                    "area": "Packaging"
+                  },
+                  "viewPath": "app/operations/main/troubleCall/troubleCallDashboard_area"
+                },
+                {
+                  "icon": {
+                    "elements": [],
+                    "viewBox": "0 0 1 1"
+                  },
+                  "id": -1,
+                  "instanceStyle": {
+                    "backgroundColor": "",
+                    "classes": ""
+                  },
+                  "labelText": "TBD Analytics",
+                  "pageUrl": "/production/troubleCall/Molding",
+                  "parentId": 97,
+                  "selected": 0,
+                  "treePath": "Packaging/Analytics",
+                  "viewParams": {
+                    "area": "Molding"
+                  },
+                  "viewPath": "app/operations/main/troubleCall/troubleCallDashboard_area"
+                }
+              ],
+              "subSubElements": []
+            },
+            {
+              "instanceStyle": {
+                "classes": "",
+                "fontWeight": "bold"
+              },
+              "rootElement": {
+                "icon": {
+                  "elements": [
+                    {
+                      "d": "M4,11.25H1.25a.63.63,0,0,1-.62-.73C1,8.12,2.93.63,11.13.63s10.09,7.49,10.48,9.89a.62.62,0,0,1-.62.73H18.17",
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "path",
+                      "stroke": {
+                        "linecap": "round",
+                        "miterlimit": "10",
+                        "paint": "#B0B0B0",
+                        "width": "1.25px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "line",
+                      "stroke": {
+                        "linecap": "round",
+                        "miterlimit": "10",
+                        "paint": "#B0B0B0",
+                        "width": "1.25px"
+                      },
+                      "style": {},
+                      "type": "line",
+                      "x1": "4.04",
+                      "x2": "6.39",
+                      "y1": "3.39",
+                      "y2": "5.75"
+                    },
+                    {
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "line",
+                      "stroke": {
+                        "linecap": "round",
+                        "miterlimit": "10",
+                        "paint": "#B0B0B0",
+                        "width": "1.25px"
+                      },
+                      "style": {},
+                      "type": "line",
+                      "x1": "11.13",
+                      "x2": "11.13",
+                      "y1": "0.63",
+                      "y2": "3.82"
+                    },
+                    {
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "line",
+                      "stroke": {
+                        "linecap": "round",
+                        "miterlimit": "10",
+                        "paint": "#B0B0B0",
+                        "width": "1.25px"
+                      },
+                      "style": {},
+                      "type": "line",
+                      "x1": "18.22",
+                      "x2": "15.87",
+                      "y1": "3.39",
+                      "y2": "5.74"
+                    },
+                    {
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "line",
+                      "stroke": {
+                        "linecap": "round",
+                        "miterlimit": "10",
+                        "paint": "#B0B0B0",
+                        "width": "1.25px"
+                      },
+                      "style": {},
+                      "type": "line",
+                      "x1": "7.78",
+                      "x2": "9.86",
+                      "y1": "8.7",
+                      "y2": "9.87"
+                    },
+                    {
+                      "cx": "11.06",
+                      "cy": "10.84",
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "circle",
+                      "r": "1.28",
+                      "stroke": {
+                        "linecap": "round",
+                        "miterlimit": "10",
+                        "paint": "#B0B0B0",
+                        "width": "1.25px"
+                      },
+                      "style": {},
+                      "type": "circle"
+                    }
+                  ],
+                  "viewBox": "0 0 22 11.5"
+                },
+                "id": 97,
+                "isOpened": 0,
+                "labelText": "Packaging",
+                "materialIcon": "",
+                "navId": 1,
+                "pageUrl": "",
+                "selected": 0
+              },
+              "subElements": [
+                {
+                  "icon": {
+                    "elements": [],
+                    "viewBox": "0 0 1 1"
+                  },
+                  "id": -1,
+                  "instanceStyle": {
+                    "backgroundColor": "",
+                    "classes": ""
+                  },
+                  "labelText": "TBD Run Right",
+                  "pageUrl": "/dashboard/summary/packaging",
+                  "parentId": 97,
+                  "selected": 0,
+                  "treePath": "Packaging/Run Right",
+                  "viewParams": {},
+                  "viewPath": "Ops/Packaging/SupervisorRunRight/BreakpointSummary"
+                },
+                {
+                  "icon": {
+                    "elements": [],
+                    "viewBox": "0 0 1 1"
+                  },
+                  "id": -1,
+                  "instanceStyle": {
+                    "backgroundColor": "",
+                    "classes": ""
+                  },
+                  "labelText": "TBD Daily Ops Review",
+                  "pageUrl": "/dashboard/summary/molding",
+                  "parentId": 97,
+                  "selected": 0,
+                  "treePath": "Packaging/Daily Ops Review",
+                  "viewParams": {},
+                  "viewPath": "Ops/Packaging/SupervisorRunRight/BreakpointSummary"
+                },
+                {
+                  "icon": {
+                    "elements": [],
+                    "viewBox": "0 0 1 1"
+                  },
+                  "id": -1,
+                  "instanceStyle": {
+                    "backgroundColor": "",
+                    "classes": ""
+                  },
+                  "labelText": "TBD Technicain View",
+                  "pageUrl": "/ops/LineStatus/Packaging",
+                  "parentId": 100,
+                  "selected": 0,
+                  "treePath": "Packaging/Trouble Calls",
+                  "viewParams": {
+                    "area": "Packaging"
+                  },
+                  "viewPath": "Ops/TechnicianView/productionStatus"
+                },
+                {
+                  "icon": {
+                    "elements": [],
+                    "viewBox": "0 0 1 1"
+                  },
+                  "id": -1,
+                  "instanceStyle": {
+                    "backgroundColor": "",
+                    "classes": ""
+                  },
+                  "labelText": "Trouble Calls",
+                  "pageUrl": "/production/troubleCall/Packaging",
+                  "parentId": 97,
+                  "selected": 0,
+                  "treePath": "Packaging/Trouble Calls",
+                  "viewParams": {
+                    "area": "Packaging"
+                  },
+                  "viewPath": "app/operations/main/troubleCall/troubleCallDashboard_area"
+                },
+                {
+                  "icon": {
+                    "elements": [],
+                    "viewBox": "0 0 1 1"
+                  },
+                  "id": -1,
+                  "instanceStyle": {
+                    "backgroundColor": "",
+                    "classes": ""
+                  },
+                  "labelText": "TBD Analytics",
+                  "pageUrl": "/production/troubleCall/Molding",
+                  "parentId": 97,
+                  "selected": 0,
+                  "treePath": "Packaging/Analytics",
+                  "viewParams": {
+                    "area": "Molding"
+                  },
+                  "viewPath": "app/operations/main/troubleCall/troubleCallDashboard_area"
+                }
+              ],
+              "subSubElements": []
+            }
+          ],
+          "path": "Navigation/sideElementHolder",
+          "useDefaultViewHeight": false,
+          "useDefaultViewWidth": false
+        },
+        "scripts": {
+          "customMethods": [],
+          "extensionFunctions": null,
+          "messageHandlers": [
+            {
+              "messageType": "updateNav",
+              "pageScope": true,
+              "script": "\t# implement your handler here\n\tsystem.perspective.print(\u0027received: {0}\u0027.format(payload))\n\tif \u0027treePath\u0027 in payload:\n\t\ttreePath \u003d payload[\u0027treePath\u0027]\n\t\tif \u0027/\u0027 in treePath and not self.view.params.isTopLevel:\n\t\t\tself.custom.currentNav \u003d treePath\n\t\telse:\n\t\t\tself.custom.currentNav \u003d treePath\n\t#for i in range(5):\n\t#\tsystem.perspective.closePopup()",
+              "sessionScope": true,
+              "viewScope": false
+            }
+          ]
+        },
+        "type": "ia.display.flex-repeater"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

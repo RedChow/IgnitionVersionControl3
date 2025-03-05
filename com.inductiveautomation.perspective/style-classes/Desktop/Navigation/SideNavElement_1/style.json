@@ -1,0 +1,34 @@
+{
+  "base": {
+    "style": {
+      "color": "#555555",
+      "cursor": "pointer",
+      "fontWeight": "bold",
+      "marginBottom": "5px",
+      "outlineColor": "#D5D5D5",
+      "outlineStyle": "solid",
+      "outlineWidth": "1",
+      "paddingBottom": "0.2em",
+      "paddingLeft": "0.2em",
+      "paddingTop": "0.2em"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "hover",
+      "animation": {
+        "duration": "250ms",
+        "direction": "normal",
+        "iterationCount": "1",
+        "keyframes": {
+          "0%": {},
+          "100%": {
+            "backgroundColor": "#F0F0F0",
+            "boxShadow": "inset 0 2px 4px 0 rgba(34,34,34,0.4)",
+            "color": "#000000"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+/* Direct stylesheet authoring is an advanced feature. Knowledge of CSS required.*/
+
+.horizontal-menu-menu-item span {
+	white-space: pre-wrap !important;
+	word-break: break-word;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 80%;
+	
+}

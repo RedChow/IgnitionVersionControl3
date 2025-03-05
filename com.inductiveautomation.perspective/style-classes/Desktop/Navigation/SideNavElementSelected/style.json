@@ -1,0 +1,23 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "#D0E3FF",
+      "borderBottomStyle": "none",
+      "borderLeftStyle": "none",
+      "borderRightStyle": "solid",
+      "borderRightWidth": "5px",
+      "borderTopStyle": "none",
+      "color": "#000000",
+      "cursor": "pointer"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "hover",
+      "style": {
+        "backgroundColor": "#003E89",
+        "color": "#FFF9F9"
+      }
+    }
+  ]
+}

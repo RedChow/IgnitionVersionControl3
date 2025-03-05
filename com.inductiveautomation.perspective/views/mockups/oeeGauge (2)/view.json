@@ -1,0 +1,1413 @@
+{
+  "custom": {
+    "availability": {
+      "color": "#8C8C8C",
+      "textColor": "#8C8C8C",
+      "value": 90
+    },
+    "belowToleranceColor": "#e57200",
+    "inToleranceColor": "#8C8C8C",
+    "now": false,
+    "oee": {
+      "color": "",
+      "textColor": "",
+      "value": 73
+    },
+    "performance": {
+      "color": "#8C8C8C",
+      "textColor": "#8C8C8C",
+      "value": 90
+    },
+    "quality": {
+      "color": "#8C8C8C",
+      "textColor": "#8C8C8C",
+      "value": 90
+    },
+    "toleranceTagPaths": {
+      "availability": "[default]systemConfig/applicationSettings/Tolerances/equipmentAvailabilityNegativeThreshold",
+      "oee": "[default]systemConfig/applicationSettings/Tolerances/equipmentOeeNegativeThreshold",
+      "performance": "[default]systemConfig/applicationSettings/Tolerances/equipmentPerformanceNegativeThreshold",
+      "quality": "[default]systemConfig/applicationSettings/Tolerances/equipmentQualityNegativeThreshold"
+    },
+    "tolerances": {}
+  },
+  "params": {
+    "availability": {
+      "label": "A",
+      "value": 0.9
+    },
+    "fontSize": "24pt",
+    "fontSizeSmall": "10pt",
+    "key": "value",
+    "locationEnum": "",
+    "oEE": {
+      "label": "OEE",
+      "value": 0.729
+    },
+    "performance": {
+      "label": "P",
+      "value": 0.9
+    },
+    "quality": {
+      "label": "Q",
+      "value": 0.9
+    },
+    "refresh": true,
+    "showFloatingAPQ": true,
+    "showLegend": true,
+    "title": "OEE"
+  },
+  "propConfig": {
+    "custom.availability": {
+      "binding": {
+        "config": {
+          "expression": "toint({view.params.availability.value} * 100)"
+        },
+        "overlayOptOut": true,
+        "transforms": [
+          {
+            "code": "\tif value is None:\n\t\tvalue \u003d 0\n\tret \u003d {\u0027value\u0027:value,\n\t\t\t\u0027color\u0027:self.custom.inToleranceColor,\n\t\t\t\u0027textColor\u0027:self.custom.inToleranceColor}\n\ttry:\n\t\ttolerance \u003d self.custom.tolerances.availability\n\texcept:\n\t\ttolerance \u003d 60\n\t\n\tif value \u003c int(tolerance):\n\t\tret[\u0027color\u0027] \u003d self.custom.belowToleranceColor\n\t\tret[\u0027textColor\u0027] \u003d self.custom.belowToleranceColor\n\treturn ret",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.belowToleranceColor": {
+      "persistent": true
+    },
+    "custom.inToleranceColor": {
+      "persistent": true
+    },
+    "custom.now": {
+      "binding": {
+        "config": {
+          "expression": "getSecond(now(1000))%5 \u003d 1"
+        },
+        "type": "expr"
+      },
+      "onChange": {
+        "enabled": null,
+        "script": "\tif previousValue is not None and previousValue.value !\u003d currentValue.value:\n\t\tself.params.refresh \u003d not self.params.refresh \n\t\t"
+      },
+      "persistent": true
+    },
+    "custom.oee": {
+      "binding": {
+        "config": {
+          "expression": "toint({view.params.oEE.value} * 100)"
+        },
+        "overlayOptOut": true,
+        "transforms": [
+          {
+            "code": "\tif value is None:\n\t\tvalue \u003d 0\n\tret \u003d {\u0027value\u0027:value,\n\t\t\t\u0027color\u0027:\u0027\u0027,\n\t\t\t\u0027textColor\u0027:\u0027\u0027}\n\ttry:\n\t\ttolerance \u003d self.custom.tolerances.oee\n\texcept:\n\t\ttolerance \u003d 50\n\t\n\tif value \u003c int(tolerance):\n\t\tret[\u0027color\u0027] \u003d self.custom.belowToleranceColor\n\t\tret[\u0027textColor\u0027] \u003d self.custom.belowToleranceColor\n\treturn ret",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.performance": {
+      "binding": {
+        "config": {
+          "expression": "toint({view.params.performance.value} * 100)"
+        },
+        "overlayOptOut": true,
+        "transforms": [
+          {
+            "code": "\tif value is None:\n\t\tvalue \u003d 0\n\tret \u003d {\u0027value\u0027:value,\n\t\t\t\u0027color\u0027:self.custom.inToleranceColor,\n\t\t\t\u0027textColor\u0027:self.custom.inToleranceColor}\n\ttry:\n\t\ttolerance \u003d self.custom.tolerances.performance\n\texcept:\n\t\ttolerance \u003d 70\n\t\n\tif value \u003c int(tolerance):\n\t\tret[\u0027color\u0027] \u003d self.custom.belowToleranceColor\n\t\tret[\u0027textColor\u0027] \u003d self.custom.belowToleranceColor\n\treturn ret",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.quality": {
+      "binding": {
+        "config": {
+          "expression": "toint({view.params.quality.value} * 100)"
+        },
+        "overlayOptOut": true,
+        "transforms": [
+          {
+            "code": "\tif value is None:\n\t\tvalue \u003d 0\n\tret \u003d {\u0027value\u0027:value,\n\t\t\u0027color\u0027:self.custom.inToleranceColor,\n\t\t\u0027textColor\u0027:self.custom.inToleranceColor}\n\t\n\ttry:\n\t\ttolerance \u003d self.custom.tolerances.quality\n\texcept:\n\t\ttolerance \u003d 90\n\t\n\tif value \u003c int(tolerance):\n\t\tret[\u0027color\u0027] \u003d self.custom.belowToleranceColor\n\t\tret[\u0027textColor\u0027] \u003d self.custom.belowToleranceColor\n\treturn ret",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.toleranceTagPaths": {
+      "binding": {
+        "config": {
+          "path": "view.params.locationEnum"
+        },
+        "overlayOptOut": true,
+        "transforms": [
+          {
+            "code": "\tif value \u003d\u003d \u0027Site\u0027:\n\t\ttagPaths \u003d {\u0027oee\u0027:\u0027[default]systemConfig/applicationSettings/Site Information/siteOeeNegativeThreshold\u0027,\n\t\t\t\t\t\u0027availability\u0027:\u0027[default]systemConfig/applicationSettings/Site Information/siteAvailabilityNegativeThreshold\u0027,\n\t\t\t\t\t\u0027performance\u0027:\u0027[default]systemConfig/applicationSettings/Site Information/sitePerformanceNegativeThreshold\u0027,\n\t\t\t\t\t\u0027quality\u0027:\u0027[default]systemConfig/applicationSettings/Site Information/siteQualityNegativeThreshold\u0027}\n\t\t\n\telif value \u003d\u003d \u0027Area\u0027:\n\t\ttagPaths \u003d {\u0027oee\u0027:\u0027[default]systemConfig/applicationSettings/Area Information/areaOeeNegativeThreshold\u0027,\n\t\t\t\t\t\u0027availability\u0027:\u0027[default]systemConfig/applicationSettings/Area Information/areaAvailabilityNegativeThreshold\u0027,\n\t\t\t\t\t\u0027performance\u0027:\u0027[default]systemConfig/applicationSettings/Area Information/areaPerformanceNegativeThreshold\u0027,\n\t\t\t\t\t\u0027quality\u0027:\u0027[default]systemConfig/applicationSettings/Area Information/areaQualityNegativeThreshold\u0027}\n\telse:\n\t\ttagPaths \u003d {\u0027oee\u0027:\u0027[default]systemConfig/applicationSettings/Tolerances/equipmentOeeNegativeThreshold\u0027,\n\t\t\t\t\t\u0027availability\u0027:\u0027[default]systemConfig/applicationSettings/Tolerances/equipmentAvailabilityNegativeThreshold\u0027,\n\t\t\t\t\t\u0027performance\u0027:\u0027[default]systemConfig/applicationSettings/Tolerances/equipmentPerformanceNegativeThreshold\u0027,\n\t\t\t\t\t\u0027quality\u0027:\u0027[default]systemConfig/applicationSettings/Tolerances/equipmentQualityNegativeThreshold\u0027}\n\treturn tagPaths",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.tolerances": {
+      "persistent": true
+    },
+    "custom.tolerances.availability": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "0": "{view.custom.toleranceTagPaths.availability}"
+          },
+          "tagPath": "{0}"
+        },
+        "transforms": [
+          {
+            "expression": "if(isnull({value}), 70, {value})",
+            "type": "expression"
+          }
+        ],
+        "type": "tag"
+      }
+    },
+    "custom.tolerances.oee": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "0": "{view.custom.toleranceTagPaths.oee}"
+          },
+          "tagPath": "{0}"
+        },
+        "transforms": [
+          {
+            "expression": "if(isnull({value}), 50, {value})",
+            "type": "expression"
+          }
+        ],
+        "type": "tag"
+      }
+    },
+    "custom.tolerances.performance": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "0": "{view.custom.toleranceTagPaths.performance}"
+          },
+          "tagPath": "{0}"
+        },
+        "transforms": [
+          {
+            "expression": "if(isnull({value}), 70, {value})",
+            "type": "expression"
+          }
+        ],
+        "type": "tag"
+      }
+    },
+    "custom.tolerances.quality": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "0": "{view.custom.toleranceTagPaths.quality}"
+          },
+          "tagPath": "{0}"
+        },
+        "transforms": [
+          {
+            "expression": "if(isnull({value}), 90, {value})",
+            "type": "expression"
+          }
+        ],
+        "type": "tag"
+      }
+    },
+    "params.availability": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.availability.label": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.availability.value": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fontSize": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fontSizeSmall": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.key": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.locationEnum": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.oEE": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.oEE.label": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.oEE.value": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.performance": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.performance.label": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.performance.value": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.quality": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.quality.label": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.quality.value": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.refresh": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.showFloatingAPQ": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.showLegend": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.title": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 200,
+      "width": 200
+    },
+    "loading": {
+      "mode": "blocking"
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "oee"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.title"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "textAlign": "left"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "title"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "Cards/header",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "valueAPQ"
+            },
+            "position": {
+              "height": 1,
+              "width": 1
+            },
+            "propConfig": {
+              "props.data[0].value": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.oEE.value"
+                  },
+                  "overlayOptOut": true,
+                  "type": "property"
+                }
+              },
+              "props.data[1].value": {
+                "binding": {
+                  "config": {
+                    "expression": "1 - {view.params.availability.value}"
+                  },
+                  "overlayOptOut": true,
+                  "type": "expr"
+                }
+              },
+              "props.data[2].value": {
+                "binding": {
+                  "config": {
+                    "expression": "(1 - {view.params.performance.value})\r\n* ({view.params.availability.value})"
+                  },
+                  "overlayOptOut": true,
+                  "type": "expr"
+                }
+              },
+              "props.data[3].value": {
+                "binding": {
+                  "config": {
+                    "expression": "(1 - {view.params.quality.value})\r\n* ({view.params.availability.value})\r\n* ({view.params.performance.value})"
+                  },
+                  "overlayOptOut": true,
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "colors": [
+                "#FF474700",
+                "#808080",
+                "#AAAAAA",
+                "#D5D5D5"
+              ],
+              "cutoutRadius": 50,
+              "data": [
+                {
+                  "label": "OEE"
+                },
+                {
+                  "label": "Availability"
+                },
+                {
+                  "label": "Performance"
+                },
+                {
+                  "label": "Quality"
+                }
+              ],
+              "enableTransitions": false,
+              "labels": {
+                "bent": true,
+                "wrap": {
+                  "maxWidth": 50
+                }
+              },
+              "showLabels": false,
+              "showLegend": false,
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.chart.pie"
+          },
+          {
+            "meta": {
+              "name": "valueOEE"
+            },
+            "position": {
+              "height": 0.9116,
+              "width": 0.8991,
+              "x": 0.05,
+              "y": 0.05
+            },
+            "propConfig": {
+              "props.data[0].value": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.oEE.value"
+                  },
+                  "overlayOptOut": true,
+                  "type": "property"
+                }
+              },
+              "props.data[1].value": {
+                "binding": {
+                  "config": {
+                    "expression": "1 - {view.params.availability.value}"
+                  },
+                  "overlayOptOut": true,
+                  "type": "expr"
+                }
+              },
+              "props.data[2].value": {
+                "binding": {
+                  "config": {
+                    "expression": "(1 - {view.params.performance.value})\r\n* ({view.params.availability.value})"
+                  },
+                  "overlayOptOut": true,
+                  "type": "expr"
+                }
+              },
+              "props.data[3].value": {
+                "binding": {
+                  "config": {
+                    "expression": "(1 - {view.params.quality.value})\r\n* ({view.params.availability.value})\r\n* ({view.params.performance.value})"
+                  },
+                  "overlayOptOut": true,
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "colors": [
+                "#298fc2",
+                "#EC4B3D00",
+                "#4FC86C00",
+                "#00A9C600"
+              ],
+              "cutoutRadius": 65,
+              "data": [
+                {
+                  "label": "OEE"
+                },
+                {
+                  "label": "Availability"
+                },
+                {
+                  "label": "Performance"
+                },
+                {
+                  "label": "Quality"
+                }
+              ],
+              "enableTransitions": false,
+              "showLabels": false,
+              "showLegend": false,
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.chart.pie"
+          },
+          {
+            "meta": {
+              "name": "ViewCanvas"
+            },
+            "position": {
+              "height": 0.76,
+              "width": 0.76,
+              "x": 0.12,
+              "y": 0.12
+            },
+            "propConfig": {
+              "meta.visible": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.showFloatingAPQ"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.instances[0].bottom": {
+                "binding": {
+                  "config": {
+                    "expression": "(85 - {this.props.instances[0].top}) + \u0027%\u0027\r\n"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.instances[0].left": {
+                "binding": {
+                  "config": {
+                    "expression": "tostring(toint(\r\n((0.5 *\r\nsin((({../valueAPQ.props.data[0].value}+ ({../valueAPQ.props.data[1].value} / 2)) * 360) * 0.017444)\r\n)\r\n+0.5)\r\n* 85\r\n)) + \u0027%\u0027"
+                  },
+                  "overlayOptOut": true,
+                  "type": "expr"
+                }
+              },
+              "props.instances[0].right": {
+                "binding": {
+                  "config": {
+                    "expression": "(85 - {this.props.instances[0].left}) + \u0027%\u0027\r\n"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.instances[0].top": {
+                "binding": {
+                  "config": {
+                    "expression": "tostring(toint(85 - ((0.5 *\r\ncos((({../valueAPQ.props.data[0].value}+ ({../valueAPQ.props.data[1].value} / 2)) * 360) * 0.017444)\r\n)\r\n+0.5)\r\n* 85\r\n)) + \u0027%\u0027"
+                  },
+                  "overlayOptOut": true,
+                  "type": "expr"
+                }
+              },
+              "props.instances[0].viewParams.Circle.color": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.availability.color"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.instances[0].viewParams.fontSize": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.fontSizeSmall"
+                  },
+                  "overlayOptOut": true,
+                  "type": "property"
+                }
+              },
+              "props.instances[0].viewParams.textColor": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.availability.textColor"
+                  },
+                  "overlayOptOut": true,
+                  "type": "property"
+                }
+              },
+              "props.instances[1].bottom": {
+                "binding": {
+                  "config": {
+                    "expression": "(85 - {this.props.instances[1].top}) + \u0027%\u0027"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.instances[1].left": {
+                "binding": {
+                  "config": {
+                    "expression": "tostring(toInt(((0.5 *\r\nsin((({../valueAPQ.props.data[0].value} + {../valueAPQ.props.data[1].value} + ({../valueAPQ.props.data[2].value} / 2)) * 360) * 0.017444)\r\n)\r\n+0.5)\r\n* 85\r\n)) + \u0027%\u0027"
+                  },
+                  "overlayOptOut": true,
+                  "type": "expr"
+                }
+              },
+              "props.instances[1].right": {
+                "binding": {
+                  "config": {
+                    "expression": "(85 - {this.props.instances[1].left}) + \u0027%\u0027"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.instances[1].top": {
+                "binding": {
+                  "config": {
+                    "expression": "tostring(toInt(85-\r\n((0.5 *\r\ncos((({../valueAPQ.props.data[0].value} + {../valueAPQ.props.data[1].value} + ({../valueAPQ.props.data[2].value} / 2)) * 360) * 0.017444)\r\n)\r\n+0.5)\r\n* 85\r\n)) + \u0027%\u0027"
+                  },
+                  "overlayOptOut": true,
+                  "type": "expr"
+                }
+              },
+              "props.instances[1].viewParams.Circle.color": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.performance.color"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.instances[1].viewParams.fontSize": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.fontSizeSmall"
+                  },
+                  "overlayOptOut": true,
+                  "type": "property"
+                }
+              },
+              "props.instances[1].viewParams.textColor": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.performance.textColor"
+                  },
+                  "overlayOptOut": true,
+                  "type": "property"
+                }
+              },
+              "props.instances[2].bottom": {
+                "binding": {
+                  "config": {
+                    "expression": "(85 - {this.props.instances[2].top}) + \u0027%\u0027\r\n"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.instances[2].left": {
+                "binding": {
+                  "config": {
+                    "expression": "tostring(toInt(((0.5 *\r\nsin((({../valueAPQ.props.data[0].value} + {../valueAPQ.props.data[1].value} + {../valueAPQ.props.data[2].value} + ({../valueAPQ.props.data[3].value} / 2)) * 360) * 0.017444)\r\n)\r\n+0.5)\r\n* 85\r\n)) + \u0027%\u0027"
+                  },
+                  "overlayOptOut": true,
+                  "type": "expr"
+                }
+              },
+              "props.instances[2].right": {
+                "binding": {
+                  "config": {
+                    "expression": "(85 - {this.props.instances[2].left}) + \u0027%\u0027\r\n"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.instances[2].top": {
+                "binding": {
+                  "config": {
+                    "expression": "tostring(toInt(85 -\r\n((0.5 *\r\ncos((({../valueAPQ.props.data[0].value} + {../valueAPQ.props.data[1].value} + {../valueAPQ.props.data[2].value} + ({../valueAPQ.props.data[3].value} / 2)) * 360) * 0.017444)\r\n)\r\n+0.5)\r\n* 85\r\n)) + \u0027%\u0027"
+                  },
+                  "overlayOptOut": true,
+                  "type": "expr"
+                }
+              },
+              "props.instances[2].viewParams.Circle.color": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.quality.color"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.instances[2].viewParams.fontSize": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.fontSizeSmall"
+                  },
+                  "overlayOptOut": true,
+                  "type": "property"
+                }
+              },
+              "props.instances[2].viewParams.textColor": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.quality.textColor"
+                  },
+                  "overlayOptOut": true,
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "enableTransitions": false,
+              "instances": [
+                {
+                  "height": "auto",
+                  "position": "absolute",
+                  "style": {
+                    "classes": ""
+                  },
+                  "viewParams": {
+                    "Circle": {
+                      "label": "A"
+                    }
+                  },
+                  "viewPath": "mockups/iconLabelSquare",
+                  "width": "auto",
+                  "zIndex": "auto"
+                },
+                {
+                  "height": "100%",
+                  "position": "absolute",
+                  "style": {
+                    "classes": ""
+                  },
+                  "viewParams": {
+                    "Circle": {
+                      "label": "P"
+                    }
+                  },
+                  "viewPath": "mockups/iconLabelSquare",
+                  "width": "100%",
+                  "zIndex": "auto"
+                },
+                {
+                  "height": "100%",
+                  "position": "absolute",
+                  "style": {
+                    "classes": ""
+                  },
+                  "viewParams": {
+                    "Circle": {
+                      "label": "Q"
+                    }
+                  },
+                  "viewPath": "mockups/iconLabelSquare",
+                  "width": "100%",
+                  "zIndex": "auto"
+                }
+              ],
+              "style": {
+                "overflow": "hidden"
+              },
+              "transitionSettings": {
+                "duration": "1s",
+                "timingFunction": "linear"
+              },
+              "useDefaultViewHeight": false,
+              "useDefaultViewWidth": false
+            },
+            "type": "ia.display.viewcanvas"
+          },
+          {
+            "meta": {
+              "name": "EmbeddedView",
+              "visible": false
+            },
+            "position": {
+              "height": 1,
+              "width": 1
+            },
+            "propConfig": {
+              "props.params.fontSize": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.fontSize"
+                  },
+                  "overlayOptOut": true,
+                  "type": "property"
+                }
+              },
+              "props.params.fontSizeSmall": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.fontSizeSmall"
+                  },
+                  "overlayOptOut": true,
+                  "type": "property"
+                }
+              },
+              "props.params.labelColor": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.oee.color"
+                  },
+                  "overlayOptOut": true,
+                  "type": "property"
+                }
+              },
+              "props.params.oEE.label": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.oEE.label"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.oEE.textColor": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.oee.textColor"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.oEE.value": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.oee.value"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "oEE": {}
+              },
+              "path": "mockups/oee"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "gauge"
+        },
+        "position": {
+          "basis": "130px",
+          "grow": 5,
+          "shrink": 0
+        },
+        "props": {
+          "aspectRatio": "1:1",
+          "mode": "percent",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.coord"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "spacer_0"
+                },
+                "position": {
+                  "basis": "10px",
+                  "grow": 2
+                },
+                "props": {
+                  "style": {
+                    "classes": "Text/LabelTextMedium Text/textColorGray",
+                    "fontSize": "10pt",
+                    "textAlign": "left"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "icon"
+                },
+                "position": {
+                  "basis": "20px",
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.Circle.color": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.availability.color"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.Circle.label": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.availability.label"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.fontSize": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.fontSizeSmall"
+                      },
+                      "overlayOptOut": true,
+                      "type": "property"
+                    }
+                  },
+                  "props.params.textColor": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.availability.textColor"
+                      },
+                      "overlayOptOut": true,
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "Circle": {
+                      "Visible": true
+                    }
+                  },
+                  "path": "mockups/iconLabelSquare"
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "availablityValue"
+                },
+                "position": {
+                  "basis": "23px",
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.style.fontSize": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.fontSizeSmall"
+                      },
+                      "overlayOptOut": true,
+                      "type": "property"
+                    }
+                  },
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.availability.value"
+                      },
+                      "overlayOptOut": true,
+                      "transforms": [
+                        {
+                          "expression": "{value} +\u0027%\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "Text/LabelTextMedium Text/textColorGray",
+                    "overflow": "visible",
+                    "textAlign": "left"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "spacer"
+                },
+                "position": {
+                  "basis": "10px",
+                  "grow": 2,
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "Text/LabelTextMedium Text/textColorGray",
+                    "fontSize": "10pt",
+                    "textAlign": "left"
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "availability"
+            },
+            "position": {
+              "basis": "53px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "marginBottom": "0.25rem",
+                "marginLeft": "0.25rem",
+                "marginRight": "0.25rem",
+                "marginTop": "0.25rem",
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "spacer_0"
+                },
+                "position": {
+                  "basis": "10px",
+                  "grow": 2
+                },
+                "props": {
+                  "style": {
+                    "classes": "Text/LabelTextMedium Text/textColorGray",
+                    "fontSize": "10pt",
+                    "textAlign": "left"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "icon"
+                },
+                "position": {
+                  "basis": "20px",
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.Circle.color": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.performance.color"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.Circle.label": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.performance.label"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.fontSize": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.fontSizeSmall"
+                      },
+                      "overlayOptOut": true,
+                      "type": "property"
+                    }
+                  },
+                  "props.params.textColor": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.performance.textColor"
+                      },
+                      "overlayOptOut": true,
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "Circle": {
+                      "Visible": true
+                    }
+                  },
+                  "path": "mockups/iconLabelSquare"
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "performanceValue"
+                },
+                "position": {
+                  "basis": "23px",
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.style.fontSize": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.fontSizeSmall"
+                      },
+                      "overlayOptOut": true,
+                      "type": "property"
+                    }
+                  },
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.performance.value"
+                      },
+                      "overlayOptOut": true,
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027%\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "Text/LabelTextMedium Text/textColorGray",
+                    "overflow": "visible",
+                    "textAlign": "left"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "spacer"
+                },
+                "position": {
+                  "basis": "10px",
+                  "grow": 2,
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "Text/LabelTextMedium Text/textColorGray",
+                    "fontSize": "10pt",
+                    "textAlign": "left"
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "performance"
+            },
+            "position": {
+              "basis": "53px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "justify": "center",
+              "style": {
+                "marginBottom": "0.25rem",
+                "marginLeft": "0.25rem",
+                "marginRight": "0.25rem",
+                "marginTop": "0.25rem",
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "spacer_0"
+                },
+                "position": {
+                  "basis": "10px",
+                  "grow": 2
+                },
+                "props": {
+                  "style": {
+                    "classes": "Text/LabelTextMedium Text/textColorGray",
+                    "fontSize": "10pt",
+                    "textAlign": "left"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "icon"
+                },
+                "position": {
+                  "basis": "20px",
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.Circle.color": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.quality.color"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.Circle.label": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.quality.label"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.fontSize": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.fontSizeSmall"
+                      },
+                      "overlayOptOut": true,
+                      "type": "property"
+                    }
+                  },
+                  "props.params.textColor": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.quality.textColor"
+                      },
+                      "overlayOptOut": true,
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "Circle": {
+                      "Visible": true
+                    }
+                  },
+                  "path": "mockups/iconLabelSquare"
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "qualityValue"
+                },
+                "position": {
+                  "basis": "23px",
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.style.fontSize": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.fontSizeSmall"
+                      },
+                      "overlayOptOut": true,
+                      "type": "property"
+                    }
+                  },
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.quality.value"
+                      },
+                      "overlayOptOut": true,
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027%\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "Text/LabelTextMedium Text/textColorGray",
+                    "overflow": "visible",
+                    "textAlign": "left"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "spacer"
+                },
+                "position": {
+                  "basis": "10px",
+                  "grow": 2,
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "Text/LabelTextMedium Text/textColorGray",
+                    "fontSize": "10pt",
+                    "textAlign": "left"
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "quality"
+            },
+            "position": {
+              "basis": "53px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "justify": "center",
+              "style": {
+                "marginBottom": "0.25rem",
+                "marginLeft": "0.25rem",
+                "marginRight": "0.25rem",
+                "marginTop": "0.25rem",
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "legend"
+        },
+        "position": {
+          "basis": "30px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.params.showLegend"
+              },
+              "overlayOptOut": true,
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "alignContent": "center",
+          "justify": "space-around",
+          "style": {
+            "overflow": "hidden",
+            "paddingLeft": "2ch",
+            "paddingRight": "2ch"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "breakStart",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\tself.view.params.fontSizeSmall \u003d payload[\u0027fontSizeSmall\u0027]\n#\tlog \u003d system.util.getLogger(\u0027breakStart\u0027)\n#\tlog.info(str(self.view.params.fontSizeSmall))",
+          "sessionScope": false,
+          "viewScope": true
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,1592 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 903,
+      "width": 1030
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "HorizontalMenu"
+            },
+            "position": {
+              "basis": "600px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.itemStyle.backgroundColor": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]ProjectGlobals/colors/primary"
+                  },
+                  "type": "tag"
+                }
+              },
+              "props.itemStyle.borderColor": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]ProjectGlobals/colors/primary_shade"
+                  },
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "itemStyle": {
+                "borderStyle": "solid",
+                "borderWidth": 1,
+                "fontSize": 14,
+                "fontWeight": "bolder",
+                "margin": 5,
+                "textAlign": "center",
+                "width": "180px"
+              },
+              "items": [
+                {
+                  "enabled": true,
+                  "icon": {
+                    "path": ""
+                  },
+                  "items": [
+                    {
+                      "enabled": true,
+                      "icon": {
+                        "color": "",
+                        "path": "material/link"
+                      },
+                      "items": [],
+                      "label": "Link to Google",
+                      "style": {
+                        "classes": ""
+                      },
+                      "target": "http://www.google.com"
+                    }
+                  ],
+                  "label": "Production Heat Map",
+                  "style": {
+                    "classes": "",
+                    "overflowWrap": "break-word",
+                    "textAlign": "center"
+                  },
+                  "target": ""
+                },
+                {
+                  "enabled": true,
+                  "icon": {
+                    "color": "",
+                    "path": ""
+                  },
+                  "items": [],
+                  "label": "ANDON Help Viewer",
+                  "style": {
+                    "classes": ""
+                  },
+                  "target": "http://www.google.com"
+                },
+                {
+                  "enabled": true,
+                  "icon": {
+                    "path": ""
+                  },
+                  "items": [],
+                  "label": "MOM Machine WO Data",
+                  "style": {
+                    "classes": ""
+                  },
+                  "target": ""
+                },
+                {
+                  "enabled": true,
+                  "icon": {
+                    "path": ""
+                  },
+                  "items": [],
+                  "label": "Production Machine Advisor",
+                  "style": {
+                    "classes": ""
+                  },
+                  "target": ""
+                },
+                {
+                  "enabled": true,
+                  "icon": {
+                    "path": ""
+                  },
+                  "items": [],
+                  "label": "Digital Boards",
+                  "style": {
+                    "classes": ""
+                  },
+                  "target": "/digitalboards"
+                },
+                {
+                  "enabled": true,
+                  "icon": {
+                    "path": ""
+                  },
+                  "items": [],
+                  "label": "Equipment List",
+                  "style": {
+                    "classes": ""
+                  },
+                  "target": ""
+                },
+                {
+                  "enabled": true,
+                  "icon": {
+                    "path": ""
+                  },
+                  "items": [
+                    {
+                      "enabled": true,
+                      "icon": {
+                        "color": "",
+                        "path": ""
+                      },
+                      "items": [],
+                      "label": "Shop Floor",
+                      "style": {
+                        "classes": "",
+                        "margin": 1,
+                        "padding": 1
+                      },
+                      "target": ""
+                    },
+                    {
+                      "enabled": true,
+                      "icon": {
+                        "color": "",
+                        "path": ""
+                      },
+                      "items": [],
+                      "label": "Building Safety",
+                      "style": {
+                        "classes": "",
+                        "margin": 1,
+                        "padding": 1
+                      },
+                      "target": ""
+                    },
+                    {
+                      "enabled": true,
+                      "icon": {
+                        "color": "",
+                        "path": ""
+                      },
+                      "items": [],
+                      "label": "Energy, Water, Gas",
+                      "style": {
+                        "classes": "",
+                        "margin": 1,
+                        "padding": 1
+                      },
+                      "target": ""
+                    },
+                    {
+                      "enabled": true,
+                      "icon": {
+                        "color": "",
+                        "path": ""
+                      },
+                      "items": [],
+                      "label": "Production Configuration",
+                      "style": {
+                        "classes": "",
+                        "margin": 1,
+                        "padding": 1
+                      },
+                      "target": ""
+                    }
+                  ],
+                  "label": "Applications",
+                  "style": {
+                    "classes": ""
+                  },
+                  "target": ""
+                }
+              ],
+              "style": {
+                "backgroundColor": "#FFFFFF",
+                "borderStyle": "none",
+                "borderWidth": 1,
+                "overflow": "hidden",
+                "overflowX": "visible",
+                "overflowY": "hidden"
+              }
+            },
+            "type": "ia.navigation.horizontalmenu"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_0"
+        },
+        "position": {
+          "basis": "75px"
+        },
+        "props": {
+          "style": {
+            "overflow": "visible",
+            "overflowX": "visible",
+            "overflowY": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "props": {
+              "style": {
+                "color": "#2A56BC",
+                "order": 1,
+                "textDecoration": "underline"
+              },
+              "text": "Home"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "props": {
+              "style": {
+                "order": 2,
+                "textAlign": "center"
+              },
+              "text": "\u003e"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "basis": "100px"
+            },
+            "props": {
+              "style": {
+                "color": "#2A56BC",
+                "order": 3,
+                "textAlign": "center",
+                "textDecoration": "underline"
+              },
+              "text": "Production Heat Maps"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_2"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "props": {
+              "style": {
+                "order": 4,
+                "textAlign": "center"
+              },
+              "text": "\u003e"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_3"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "props": {
+              "style": {
+                "color": "#2A56BC",
+                "order": 5,
+                "textAlign": "center",
+                "textDecoration": "underline"
+              },
+              "text": "Plant"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_4"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "props": {
+              "style": {
+                "color": "#FFFFFF",
+                "order": 0
+              },
+              "text": "Label"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "75px"
+        },
+        "props": {
+          "style": {
+            "height": "100px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "height": 153,
+                  "width": 253,
+                  "x": 35,
+                  "y": 58
+                },
+                "props": {
+                  "style": {
+                    "borderColor": "#000000",
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "position": {
+                  "height": 153,
+                  "width": 253,
+                  "x": 35,
+                  "y": 223
+                },
+                "props": {
+                  "style": {
+                    "borderColor": "#000000",
+                    "borderStyle": "solid",
+                    "borderWidth": 1
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_1"
+                },
+                "position": {
+                  "height": 379,
+                  "width": 215,
+                  "x": 297,
+                  "y": 59
+                },
+                "props": {
+                  "style": {
+                    "borderColor": "#000000",
+                    "borderStyle": "solid",
+                    "borderWidth": 1
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_2"
+                },
+                "position": {
+                  "height": 438,
+                  "width": 253,
+                  "x": 518,
+                  "y": 58.5
+                },
+                "props": {
+                  "style": {
+                    "borderColor": "#000000",
+                    "borderStyle": "solid",
+                    "borderWidth": 1
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_3"
+                },
+                "position": {
+                  "height": 151,
+                  "width": 253,
+                  "x": 777,
+                  "y": 59
+                },
+                "props": {
+                  "style": {
+                    "borderColor": "#000000",
+                    "borderStyle": "solid",
+                    "borderWidth": 1
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_4"
+                },
+                "position": {
+                  "height": 153,
+                  "width": 253,
+                  "x": 777,
+                  "y": 223
+                },
+                "props": {
+                  "style": {
+                    "borderColor": "#000000",
+                    "borderStyle": "solid",
+                    "borderWidth": 1
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_5"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 250,
+                  "x": 36,
+                  "y": 59
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#E3E3E3",
+                    "borderBottomStyle": "solid",
+                    "borderBottomWidth": 2
+                  },
+                  "text": "Electrode Cathode",
+                  "textStyle": {
+                    "fontWeight": "bolder",
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_6"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 50,
+                  "x": 77,
+                  "y": 112
+                },
+                "props": {
+                  "style": {
+                    "color": "#001BEB",
+                    "fontWeight": "bolder"
+                  },
+                  "text": 5
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_8"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 106.48,
+                  "x": 102.02,
+                  "y": 113
+                },
+                "props": {
+                  "text": "ANDON"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_9"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 39,
+                  "x": 229,
+                  "y": 112.5
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#FF0000",
+                    "fontWeight": "700",
+                    "textAlign": "center"
+                  },
+                  "text": "H"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_7"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 50,
+                  "x": 76,
+                  "y": 151
+                },
+                "props": {
+                  "style": {
+                    "color": "#001BEB",
+                    "fontWeight": "bolder"
+                  },
+                  "text": 20
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_10"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 106.48,
+                  "x": 100.5,
+                  "y": 152
+                },
+                "props": {
+                  "text": "Active Alarms"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_13"
+                },
+                "position": {
+                  "height": 39,
+                  "width": 219,
+                  "x": 56,
+                  "y": 146
+                },
+                "props": {
+                  "style": {
+                    "borderStyle": "solid",
+                    "borderWidth": 3
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_14"
+                },
+                "position": {
+                  "height": 39,
+                  "width": 219,
+                  "x": 56,
+                  "y": 108.5
+                },
+                "props": {
+                  "style": {
+                    "borderStyle": "solid",
+                    "borderWidth": 3
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Image_0"
+                },
+                "position": {
+                  "height": 33,
+                  "width": 38,
+                  "x": 227.48,
+                  "y": 149.5
+                },
+                "props": {
+                  "fit": {
+                    "mode": "fill"
+                  },
+                  "source": "/system/images/low.png"
+                },
+                "type": "ia.display.image"
+              },
+              {
+                "meta": {
+                  "name": "Label_15"
+                },
+                "position": {
+                  "height": 39,
+                  "width": 219,
+                  "x": 56,
+                  "y": 311
+                },
+                "props": {
+                  "style": {
+                    "borderStyle": "solid",
+                    "borderWidth": 1
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_11"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 50,
+                  "x": 77,
+                  "y": 312
+                },
+                "props": {
+                  "style": {
+                    "color": "#001BEB",
+                    "fontWeight": "bolder"
+                  },
+                  "text": 0
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_16"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 106.48,
+                  "x": 101.5,
+                  "y": 313
+                },
+                "props": {
+                  "text": "Active Alarms"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_17"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 50,
+                  "x": 77,
+                  "y": 273
+                },
+                "props": {
+                  "style": {
+                    "color": "#001BEB",
+                    "fontWeight": "bolder"
+                  },
+                  "text": 0
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_18"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 106.48,
+                  "x": 101.5,
+                  "y": 274
+                },
+                "props": {
+                  "text": "ANDON"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_19"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 50,
+                  "x": 312,
+                  "y": 151
+                },
+                "props": {
+                  "style": {
+                    "color": "#001BEB",
+                    "fontWeight": "bolder"
+                  },
+                  "text": 1
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_20"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 106.48,
+                  "x": 336.5,
+                  "y": 152
+                },
+                "props": {
+                  "text": "Active Alarms"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Image_3"
+                },
+                "position": {
+                  "height": 33,
+                  "width": 38,
+                  "x": 463.48,
+                  "y": 149.5
+                },
+                "props": {
+                  "fit": {
+                    "mode": "fill"
+                  },
+                  "source": "/system/images/medium.png"
+                },
+                "type": "ia.display.image"
+              },
+              {
+                "meta": {
+                  "name": "Label_21"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 50,
+                  "x": 312,
+                  "y": 111
+                },
+                "props": {
+                  "style": {
+                    "color": "#001BEB",
+                    "fontWeight": "bolder"
+                  },
+                  "text": 0
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_22"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 106.48,
+                  "x": 336.5,
+                  "y": 112
+                },
+                "props": {
+                  "text": "ANDON"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_23"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 50,
+                  "x": 554,
+                  "y": 146
+                },
+                "props": {
+                  "style": {
+                    "color": "#001BEB",
+                    "fontWeight": "bolder"
+                  },
+                  "text": 0
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_24"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 106.48,
+                  "x": 578.5,
+                  "y": 147
+                },
+                "props": {
+                  "text": "Active Alarms"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_25"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 50,
+                  "x": 553,
+                  "y": 105
+                },
+                "props": {
+                  "style": {
+                    "color": "#001BEB",
+                    "fontWeight": "bolder"
+                  },
+                  "text": 0
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_26"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 106.48,
+                  "x": 577.5,
+                  "y": 106
+                },
+                "props": {
+                  "text": "ANDON"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_27"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 50,
+                  "x": 811,
+                  "y": 152
+                },
+                "props": {
+                  "style": {
+                    "color": "#001BEB",
+                    "fontWeight": "bolder"
+                  },
+                  "text": 0
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_28"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 106.48,
+                  "x": 835.5,
+                  "y": 153
+                },
+                "props": {
+                  "text": "Active Alarms"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_29"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 50,
+                  "x": 811,
+                  "y": 110
+                },
+                "props": {
+                  "style": {
+                    "color": "#001BEB",
+                    "fontWeight": "bolder"
+                  },
+                  "text": 2
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_30"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 106.48,
+                  "x": 835.5,
+                  "y": 111
+                },
+                "props": {
+                  "text": "Active Alarms"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_31"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 50,
+                  "x": 814,
+                  "y": 317
+                },
+                "props": {
+                  "style": {
+                    "color": "#001BEB",
+                    "fontWeight": "bolder"
+                  },
+                  "text": 1
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_32"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 106.48,
+                  "x": 838.5,
+                  "y": 318
+                },
+                "props": {
+                  "text": "Active Alarms"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Image_9"
+                },
+                "position": {
+                  "height": 33,
+                  "width": 38,
+                  "x": 965.48,
+                  "y": 315.5
+                },
+                "props": {
+                  "fit": {
+                    "mode": "fill"
+                  },
+                  "source": "/system/images/high.png"
+                },
+                "type": "ia.display.image"
+              },
+              {
+                "meta": {
+                  "name": "Label_33"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 50,
+                  "x": 814,
+                  "y": 277
+                },
+                "props": {
+                  "style": {
+                    "color": "#001BEB",
+                    "fontWeight": "bolder"
+                  },
+                  "text": 1
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_34"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 106.48,
+                  "x": 838.5,
+                  "y": 278
+                },
+                "props": {
+                  "text": "Active Alarms"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_35"
+                },
+                "position": {
+                  "height": 39,
+                  "width": 219,
+                  "x": 56,
+                  "y": 273
+                },
+                "props": {
+                  "style": {
+                    "borderStyle": "solid",
+                    "borderWidth": 1
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_36"
+                },
+                "position": {
+                  "height": 39,
+                  "width": 208,
+                  "x": 300,
+                  "y": 107
+                },
+                "props": {
+                  "style": {
+                    "borderStyle": "solid",
+                    "borderWidth": 1
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_37"
+                },
+                "position": {
+                  "height": 39,
+                  "width": 208,
+                  "x": 300,
+                  "y": 145
+                },
+                "props": {
+                  "style": {
+                    "borderStyle": "solid",
+                    "borderWidth": 3
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_12"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 249,
+                  "x": 37,
+                  "y": 224
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#E3E3E3",
+                    "borderBottomStyle": "solid",
+                    "borderBottomWidth": 2
+                  },
+                  "text": "Electrode Anode",
+                  "textStyle": {
+                    "fontWeight": "bolder",
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_38"
+                },
+                "position": {
+                  "height": 32,
+                  "width": "100%"
+                },
+                "props": {
+                  "textStyle": {
+                    "fontWeight": "bolder",
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_39"
+                },
+                "position": {
+                  "height": 39,
+                  "width": 219,
+                  "x": 535,
+                  "y": 103.719
+                },
+                "props": {
+                  "style": {
+                    "borderStyle": "solid",
+                    "borderWidth": 1
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_40"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 213,
+                  "x": 298,
+                  "y": 59.72
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#E3E3E3",
+                    "borderBottomStyle": "solid",
+                    "borderBottomWidth": 2
+                  },
+                  "text": "Cut \u0026 Stack",
+                  "textStyle": {
+                    "fontWeight": "bolder",
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_41"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 249,
+                  "x": 520.5,
+                  "y": 59.94
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#E3E3E3",
+                    "borderBottomStyle": "solid",
+                    "borderBottomWidth": 2
+                  },
+                  "text": "Cell Assembly",
+                  "textStyle": {
+                    "fontWeight": "bolder",
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_42"
+                },
+                "position": {
+                  "height": 39,
+                  "width": 219,
+                  "x": 535,
+                  "y": 141.72
+                },
+                "props": {
+                  "style": {
+                    "borderStyle": "solid",
+                    "borderWidth": 1
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_43"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 39,
+                  "x": 965.469,
+                  "y": 113.719
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#FFE300",
+                    "fontWeight": "700",
+                    "textAlign": "center"
+                  },
+                  "text": "M"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_44"
+                },
+                "position": {
+                  "height": 39,
+                  "width": 219,
+                  "x": 794,
+                  "y": 110.439
+                },
+                "props": {
+                  "style": {
+                    "borderStyle": "solid",
+                    "borderWidth": 3
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_45"
+                },
+                "position": {
+                  "height": 39,
+                  "width": 219,
+                  "x": 794,
+                  "y": 147.659
+                },
+                "props": {
+                  "style": {
+                    "borderStyle": "solid",
+                    "borderWidth": 1
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_46"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 39,
+                  "x": 965.47,
+                  "y": 280.72
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#23EF00",
+                    "fontWeight": "700",
+                    "textAlign": "center"
+                  },
+                  "text": "L"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_47"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 249,
+                  "x": 778.739,
+                  "y": 59.6644
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#E3E3E3",
+                    "borderBottomStyle": "solid",
+                    "borderBottomWidth": 2
+                  },
+                  "text": "Cell Formation",
+                  "textStyle": {
+                    "fontWeight": "bolder",
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_48"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 249,
+                  "x": 779.007,
+                  "y": 224.379
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#E3E3E3",
+                    "borderBottomStyle": "solid",
+                    "borderBottomWidth": 2
+                  },
+                  "text": "Packaging",
+                  "textStyle": {
+                    "fontWeight": "bolder",
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_49"
+                },
+                "position": {
+                  "height": 39,
+                  "width": 219,
+                  "x": 794,
+                  "y": 275.44
+                },
+                "props": {
+                  "style": {
+                    "borderStyle": "solid",
+                    "borderWidth": 3
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_50"
+                },
+                "position": {
+                  "height": 39,
+                  "width": 219,
+                  "x": 794,
+                  "y": 312.44
+                },
+                "props": {
+                  "style": {
+                    "borderStyle": "solid",
+                    "borderWidth": 3
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "EmbeddedView"
+                },
+                "position": {
+                  "height": 244,
+                  "width": 197,
+                  "x": 308,
+                  "y": 190
+                },
+                "props": {
+                  "params": {
+                    "availability": {
+                      "label": "A",
+                      "value": ".6"
+                    },
+                    "oEE": {
+                      "label": "OEE",
+                      "value": ".85"
+                    },
+                    "performance": {
+                      "label": "P",
+                      "value": 0.9
+                    },
+                    "quality": {
+                      "label": "Q",
+                      "value": ".2"
+                    },
+                    "refresh": false,
+                    "title": "OEE"
+                  },
+                  "path": "mockups/oeeGauge_overview"
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "MovingAnalogIndicator"
+                },
+                "position": {
+                  "height": 57,
+                  "width": 193,
+                  "x": 548,
+                  "y": 222.438
+                },
+                "props": {
+                  "desiredHigh": 100,
+                  "desiredLow": 75,
+                  "desiredRangeColor": "#00AC00",
+                  "highAlarm": "",
+                  "highHighAlarm": null,
+                  "highInterlock": null,
+                  "lowAlarm": "",
+                  "lowInterlock": null,
+                  "lowLowAlarm": null,
+                  "processValue": 65
+                },
+                "type": "ia.display.moving-analog-indicator"
+              },
+              {
+                "meta": {
+                  "name": "Label_51"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 178,
+                  "x": 554,
+                  "y": 193.5
+                },
+                "props": {
+                  "text": "Performance",
+                  "textStyle": {
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_52"
+                },
+                "position": {
+                  "height": 32,
+                  "width": 50,
+                  "x": 619.5,
+                  "y": 255
+                },
+                "props": {
+                  "style": {
+                    "color": "#001BEB",
+                    "fontWeight": "bolder"
+                  },
+                  "text": "75%",
+                  "textStyle": {
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "PieChart"
+                },
+                "position": {
+                  "height": 187,
+                  "width": 154,
+                  "x": 567.5,
+                  "y": 307
+                },
+                "props": {
+                  "colors": [
+                    "#000000",
+                    "#9A9AFE",
+                    "#4FC86C",
+                    "#00A9C6",
+                    "#E69300"
+                  ],
+                  "cutoutRadius": 70,
+                  "data": [
+                    {
+                      "count": 2,
+                      "flavor": "Out"
+                    },
+                    {
+                      "count": 17,
+                      "flavor": "Good"
+                    }
+                  ],
+                  "labels": {
+                    "showName": false,
+                    "showValue": false
+                  },
+                  "title": "Machine Statuses"
+                },
+                "type": "ia.chart.pie"
+              }
+            ],
+            "meta": {
+              "name": "CoordinateContainer"
+            },
+            "position": {
+              "basis": "200px",
+              "grow": 1
+            },
+            "type": "ia.container.coord"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_1"
+        },
+        "position": {
+          "basis": 600,
+          "grow": 1
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "custom": {
+          "showingAlarms": false
+        },
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tself.custom.showingAlarms \u003d not self.custom.showingAlarms"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          },
+          "dom": {
+            "onClick": {
+              "config": {
+                "id": "alarmdock",
+                "type": "toggle"
+              },
+              "scope": "C",
+              "type": "dock"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "34px"
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "if({this.custom.showingAlarms}, \u0027Hide Alarms\u0027, \u0027Show Alarms\u0027)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "width": "100px"
+          }
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

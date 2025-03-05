@@ -1,0 +1,13 @@
+{
+  "base": {
+    "style": {
+      "color": "#555555",
+      "fontFamily": "roboto",
+      "fontSize": "12px",
+      "fontWeight": "bold",
+      "paddingLeft": "10px",
+      "paddingTop": "5px",
+      "textAlign": "left"
+    }
+  }
+}

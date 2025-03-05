@@ -1,0 +1,886 @@
+{
+  "custom": {
+    "availability": {
+      "color": "#8C8C8C",
+      "textColor": "#8C8C8C",
+      "value": 90
+    },
+    "belowToleranceColor": "#e57200",
+    "inToleranceColor": "#8C8C8C",
+    "now": false,
+    "oee": {
+      "color": "",
+      "textColor": "",
+      "value": 50
+    },
+    "performance": {
+      "color": "#8C8C8C",
+      "textColor": "#8C8C8C",
+      "value": 90
+    },
+    "quality": {
+      "color": "#8C8C8C",
+      "textColor": "#8C8C8C",
+      "value": 90
+    },
+    "toleranceTagPaths": {
+      "availability": "[default]systemConfig/applicationSettings/Tolerances/equipmentAvailabilityNegativeThreshold",
+      "oee": "[default]systemConfig/applicationSettings/Tolerances/equipmentOeeNegativeThreshold",
+      "performance": "[default]systemConfig/applicationSettings/Tolerances/equipmentPerformanceNegativeThreshold",
+      "quality": "[default]systemConfig/applicationSettings/Tolerances/equipmentQualityNegativeThreshold"
+    },
+    "tolerances": {}
+  },
+  "params": {
+    "availability": {
+      "label": "A",
+      "value": 0.9
+    },
+    "fontSize": "24pt",
+    "fontSizeSmall": "10pt",
+    "key": "value",
+    "locationEnum": "",
+    "oEE": {
+      "label": "OEE",
+      "value": 0.5
+    },
+    "performance": {
+      "label": "P",
+      "value": 0.9
+    },
+    "quality": {
+      "label": "Q",
+      "value": 0.9
+    },
+    "refresh": false,
+    "showFloatingAPQ": true,
+    "showLegend": true,
+    "title": "OEE"
+  },
+  "propConfig": {
+    "custom.availability": {
+      "binding": {
+        "config": {
+          "expression": "toint({view.params.availability.value} * 100)"
+        },
+        "overlayOptOut": true,
+        "transforms": [
+          {
+            "code": "\tif value is None:\n\t\tvalue \u003d 0\n\tret \u003d {\u0027value\u0027:value,\n\t\t\t\u0027color\u0027:self.custom.inToleranceColor,\n\t\t\t\u0027textColor\u0027:self.custom.inToleranceColor}\n\ttry:\n\t\ttolerance \u003d self.custom.tolerances.availability\n\texcept:\n\t\ttolerance \u003d 60\n\t\n\tif value \u003c int(tolerance):\n\t\tret[\u0027color\u0027] \u003d self.custom.belowToleranceColor\n\t\tret[\u0027textColor\u0027] \u003d self.custom.belowToleranceColor\n\treturn ret",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.belowToleranceColor": {
+      "persistent": true
+    },
+    "custom.inToleranceColor": {
+      "persistent": true
+    },
+    "custom.now": {
+      "binding": {
+        "config": {
+          "expression": "getSecond(now(1000))%5 \u003d 1"
+        },
+        "type": "expr"
+      },
+      "onChange": {
+        "enabled": null,
+        "script": "\tif previousValue is not None and previousValue.value !\u003d currentValue.value:\n\t\tself.params.refresh \u003d not self.params.refresh \n\t\tself.refreshBinding(\u0027custom.quality\u0027)\n\t\tself.refreshBinding(\u0027custom.performance\u0027)\n\t\tself.refreshBinding(\u0027custom.availability\u0027)\n\t\tself.refreshBinding(\u0027custom.oee\u0027)\n\t\t#self.getChild(\"root\").getChild(\"gauge\").getChild(\"ViewCanvas\").refreshBinding(\u0027props.instances[0].top\u0027)\n\t\t#self.getChild(\"root\").getChild(\"gauge\").getChild(\"ViewCanvas\").refreshBinding(\u0027props.instances[0].left\u0027)\n\t\t#self.getChild(\"root\").getChild(\"gauge\").getChild(\"ViewCanvas\").refreshBinding(\u0027props.instances[1].top\u0027)\n\t\t#self.getChild(\"root\").getChild(\"gauge\").getChild(\"ViewCanvas\").refreshBinding(\u0027props.instances[1].left\u0027)\n\t\t#self.getChild(\"root\").getChild(\"gauge\").getChild(\"ViewCanvas\").refreshBinding(\u0027props.instances[2].top\u0027)\n\t\t#self.getChild(\"root\").getChild(\"gauge\").getChild(\"ViewCanvas\").refreshBinding(\u0027props.instances[2].left\u0027)"
+      },
+      "persistent": true
+    },
+    "custom.oee": {
+      "binding": {
+        "config": {
+          "expression": "toint({view.params.oEE.value} * 100)"
+        },
+        "overlayOptOut": true,
+        "transforms": [
+          {
+            "code": "\tif value is None:\n\t\tvalue \u003d 0\n\tret \u003d {\u0027value\u0027:value,\n\t\t\t\u0027color\u0027:\u0027\u0027,\n\t\t\t\u0027textColor\u0027:\u0027\u0027}\n\ttry:\n\t\ttolerance \u003d self.custom.tolerances.oee\n\texcept:\n\t\ttolerance \u003d 50\n\t\n\tif value \u003c int(tolerance):\n\t\tret[\u0027color\u0027] \u003d self.custom.belowToleranceColor\n\t\tret[\u0027textColor\u0027] \u003d self.custom.belowToleranceColor\n\treturn ret",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.performance": {
+      "binding": {
+        "config": {
+          "expression": "toint({view.params.performance.value} * 100)"
+        },
+        "overlayOptOut": true,
+        "transforms": [
+          {
+            "code": "\tif value is None:\n\t\tvalue \u003d 0\n\tret \u003d {\u0027value\u0027:value,\n\t\t\t\u0027color\u0027:self.custom.inToleranceColor,\n\t\t\t\u0027textColor\u0027:self.custom.inToleranceColor}\n\ttry:\n\t\ttolerance \u003d self.custom.tolerances.performance\n\texcept:\n\t\ttolerance \u003d 70\n\t\n\tif value \u003c int(tolerance):\n\t\tret[\u0027color\u0027] \u003d self.custom.belowToleranceColor\n\t\tret[\u0027textColor\u0027] \u003d self.custom.belowToleranceColor\n\treturn ret",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.quality": {
+      "binding": {
+        "config": {
+          "expression": "toint({view.params.quality.value} * 100)"
+        },
+        "overlayOptOut": true,
+        "transforms": [
+          {
+            "code": "\tif value is None:\n\t\tvalue \u003d 0\n\tret \u003d {\u0027value\u0027:value,\n\t\t\u0027color\u0027:self.custom.inToleranceColor,\n\t\t\u0027textColor\u0027:self.custom.inToleranceColor}\n\t\n\ttry:\n\t\ttolerance \u003d self.custom.tolerances.quality\n\texcept:\n\t\ttolerance \u003d 90\n\t\n\tif value \u003c int(tolerance):\n\t\tret[\u0027color\u0027] \u003d self.custom.belowToleranceColor\n\t\tret[\u0027textColor\u0027] \u003d self.custom.belowToleranceColor\n\treturn ret",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.toleranceTagPaths": {
+      "binding": {
+        "config": {
+          "path": "view.params.locationEnum"
+        },
+        "overlayOptOut": true,
+        "transforms": [
+          {
+            "code": "\tif value \u003d\u003d \u0027Site\u0027:\n\t\ttagPaths \u003d {\u0027oee\u0027:\u0027[default]systemConfig/applicationSettings/Site Information/siteOeeNegativeThreshold\u0027,\n\t\t\t\t\t\u0027availability\u0027:\u0027[default]systemConfig/applicationSettings/Site Information/siteAvailabilityNegativeThreshold\u0027,\n\t\t\t\t\t\u0027performance\u0027:\u0027[default]systemConfig/applicationSettings/Site Information/sitePerformanceNegativeThreshold\u0027,\n\t\t\t\t\t\u0027quality\u0027:\u0027[default]systemConfig/applicationSettings/Site Information/siteQualityNegativeThreshold\u0027}\n\t\t\n\telif value \u003d\u003d \u0027Area\u0027:\n\t\ttagPaths \u003d {\u0027oee\u0027:\u0027[default]systemConfig/applicationSettings/Area Information/areaOeeNegativeThreshold\u0027,\n\t\t\t\t\t\u0027availability\u0027:\u0027[default]systemConfig/applicationSettings/Area Information/areaAvailabilityNegativeThreshold\u0027,\n\t\t\t\t\t\u0027performance\u0027:\u0027[default]systemConfig/applicationSettings/Area Information/areaPerformanceNegativeThreshold\u0027,\n\t\t\t\t\t\u0027quality\u0027:\u0027[default]systemConfig/applicationSettings/Area Information/areaQualityNegativeThreshold\u0027}\n\telse:\n\t\ttagPaths \u003d {\u0027oee\u0027:\u0027[default]systemConfig/applicationSettings/Tolerances/equipmentOeeNegativeThreshold\u0027,\n\t\t\t\t\t\u0027availability\u0027:\u0027[default]systemConfig/applicationSettings/Tolerances/equipmentAvailabilityNegativeThreshold\u0027,\n\t\t\t\t\t\u0027performance\u0027:\u0027[default]systemConfig/applicationSettings/Tolerances/equipmentPerformanceNegativeThreshold\u0027,\n\t\t\t\t\t\u0027quality\u0027:\u0027[default]systemConfig/applicationSettings/Tolerances/equipmentQualityNegativeThreshold\u0027}\n\treturn tagPaths",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.tolerances": {
+      "persistent": true
+    },
+    "custom.tolerances.availability": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "0": "{view.custom.toleranceTagPaths.availability}"
+          },
+          "tagPath": "{0}"
+        },
+        "transforms": [
+          {
+            "expression": "if(isnull({value}), 70, {value})",
+            "type": "expression"
+          }
+        ],
+        "type": "tag"
+      },
+      "onChange": {
+        "enabled": null,
+        "script": "\tif currentValue.value is not None:\n\t\tself.refreshBinding(\u0027custom.availability\u0027)"
+      }
+    },
+    "custom.tolerances.oee": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "0": "{view.custom.toleranceTagPaths.oee}"
+          },
+          "tagPath": "{0}"
+        },
+        "transforms": [
+          {
+            "expression": "if(isnull({value}), 50, {value})",
+            "type": "expression"
+          }
+        ],
+        "type": "tag"
+      },
+      "onChange": {
+        "enabled": null,
+        "script": "\tif currentValue.value is not None:\n\t\tself.refreshBinding(\u0027custom.oee\u0027)"
+      }
+    },
+    "custom.tolerances.performance": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "0": "{view.custom.toleranceTagPaths.performance}"
+          },
+          "tagPath": "{0}"
+        },
+        "transforms": [
+          {
+            "expression": "if(isnull({value}), 70, {value})",
+            "type": "expression"
+          }
+        ],
+        "type": "tag"
+      },
+      "onChange": {
+        "enabled": null,
+        "script": "\tif currentValue.value is not None:\n\t\tself.refreshBinding(\u0027custom.performance\u0027)"
+      }
+    },
+    "custom.tolerances.quality": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "0": "{view.custom.toleranceTagPaths.quality}"
+          },
+          "tagPath": "{0}"
+        },
+        "transforms": [
+          {
+            "expression": "if(isnull({value}), 90, {value})",
+            "type": "expression"
+          }
+        ],
+        "type": "tag"
+      },
+      "onChange": {
+        "enabled": null,
+        "script": "\tif currentValue.value is not None:\n\t\tself.refreshBinding(\u0027custom.quality\u0027)"
+      }
+    },
+    "params.availability": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.availability.label": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.availability.value": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fontSize": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fontSizeSmall": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.key": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.locationEnum": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.oEE": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.oEE.label": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.oEE.value": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.performance": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.performance.label": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.performance.value": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.quality": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.quality.label": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.quality.value": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.refresh": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.showFloatingAPQ": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.showLegend": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.title": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 312,
+      "width": 303
+    },
+    "loading": {
+      "mode": "blocking"
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "oee"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.title"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "fontSize": 24,
+                "textAlign": "left"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "title"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "Cards/header",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "lbl_OEE_0"
+                },
+                "position": {
+                  "basis": "52px",
+                  "display": false
+                },
+                "props": {
+                  "style": {
+                    "color": "#555555",
+                    "fontSize": 30,
+                    "fontWeight": "bold",
+                    "textAlign": "left"
+                  },
+                  "text": "OEE"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "OEE_0"
+                },
+                "position": {
+                  "basis": "52px"
+                },
+                "propConfig": {
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.oee.value"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value \u003d\u003d 100:\n\t\tcolor \u003d \u0027#808080\u0027\n\telif value \u003e self.parent.parent.getChild(\"OEE_percent_0\").props.lowLowAlarm and value \u003c self.parent.parent.getChild(\"OEE_percent_0\").props.lowAlarm: # OEE between range 0 end and range 1 end\n\t\tcolor \u003d \"#FF8C00\" # orange, warning\n\telif value \u003c\u003d self.parent.parent.getChild(\"OEE_percent_0\").props.lowLowAlarm: # if OEE is less than range 0 end\n\t\tcolor \u003d \"#FF0000\" # red, bad\n\telif value \u003e\u003d self.parent.parent.getChild(\"OEE_percent_0\").props.lowAlarm: # availability greater than range 2 start\n\t\tcolor \u003d \"#00AC00\"\n\t\n\treturn color",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.oee.value}"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value \u003d\u003d 100:\n\t\ttext \u003d \u0027N/A\u0027\n\telse:\n\t\ttext \u003d str(value) + \u0027%\u0027\n\treturn text",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "fontSize": 20,
+                    "fontWeight": "bold",
+                    "textAlign": "left",
+                    "textIndent": "5"
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "legend_0"
+            },
+            "position": {
+              "basis": "50px",
+              "grow": 1
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.showLegend"
+                  },
+                  "overlayOptOut": true,
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "alignContent": "center",
+              "alignItems": "center",
+              "direction": "column",
+              "justify": "center",
+              "style": {
+                "overflow": "hidden",
+                "paddingLeft": "2ch",
+                "paddingRight": "2ch"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "OEE_percent_0"
+            },
+            "position": {
+              "basis": "50px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.processValue": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.oee.value"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.custom.oee.value} + \u0027%\u0027"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "defaultRangeColor": "#FF8C00",
+              "desiredHigh": 100,
+              "desiredLow": 65,
+              "desiredRangeColor": "#00AC00",
+              "highAlarm": null,
+              "highHighAlarm": null,
+              "highInterlock": null,
+              "inactiveAlarmColor": "#D5D5D5",
+              "label": {
+                "format": "#,##0%",
+                "style": {
+                  "backgroundColor": "#FFFFFF",
+                  "fontSize": 18,
+                  "textAlign": "left"
+                }
+              },
+              "level1AlarmColor": "#FF0000",
+              "level2AlarmColor": "#FFAC47",
+              "lowAlarm": 65,
+              "lowInterlock": null,
+              "lowLowAlarm": 45,
+              "setpointColor": "#CCCCFF",
+              "setpointValue": ""
+            },
+            "type": "ia.display.moving-analog-indicator"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "lbl_downtime_0"
+                    },
+                    "position": {
+                      "basis": "41px"
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#555555",
+                        "fontSize": 16,
+                        "fontWeight": "bold"
+                      },
+                      "text": "Availability"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "downtime_0"
+                    },
+                    "position": {
+                      "basis": "34px"
+                    },
+                    "propConfig": {
+                      "props.style.color": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.availabilityPercent"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tif value \u003e 80 and value \u003c 90: # availability between range 0 end and range 1 end\n\t\tcolor \u003d \"#FF8C00\" # orange, warning\n\telif value \u003c\u003d 80: # if availability is less than range 0 end\n\t\tcolor \u003d \"#FF0000\" # red, bad\n\telif value \u003e\u003d 90: # availability greater than range 2 start\n\t\tcolor \u003d \"#00AC00\"\n\t\n\treturn color",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.custom.availability.value} + \u0027%\u0027"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "fontSize": 20,
+                        "fontWeight": "normal",
+                        "textAlign": "left"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "availability"
+                },
+                "position": {
+                  "basis": "53px",
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "alignContent": "flex-start",
+                  "alignItems": "flex-start",
+                  "direction": "column",
+                  "style": {
+                    "marginBottom": "0.25rem",
+                    "marginLeft": "0.25rem",
+                    "marginRight": "0.25rem",
+                    "marginTop": "0.25rem",
+                    "overflow": "visible"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "lbl_performance_0"
+                    },
+                    "position": {
+                      "basis": "32px"
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#555555",
+                        "fontSize": 16,
+                        "fontWeight": "bold"
+                      },
+                      "text": "Performance"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "performance_0"
+                    },
+                    "position": {
+                      "basis": "27.2px"
+                    },
+                    "propConfig": {
+                      "props.style.color": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.performancePercent"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tif value \u003e 80 and value \u003c 90: # availability between range 0 end and range 1 end\n\t\tcolor \u003d \"#FF8C00\" # orange, warning\n\telif value \u003c\u003d 80: # if availability is less than range 0 end\n\t\tcolor \u003d \"#FF0000\" # red, bad\n\telif value \u003e\u003d 90: # availability greater than range 2 start\n\t\tcolor \u003d \"#00AC00\"\n\t\n\treturn color",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.custom.performance.value} + \u0027%\u0027"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "fontSize": 20,
+                        "fontWeight": "normal",
+                        "textAlign": "left"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "performance"
+                },
+                "position": {
+                  "basis": "53px",
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "justify": "center",
+                  "style": {
+                    "marginBottom": "0.25rem",
+                    "marginLeft": "0.25rem",
+                    "marginRight": "0.25rem",
+                    "marginTop": "0.25rem",
+                    "overflow": "visible"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "lbl_scrap_0"
+                    },
+                    "position": {
+                      "basis": "40px"
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#555555",
+                        "fontSize": 16,
+                        "fontWeight": "bold"
+                      },
+                      "text": "Scrap"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "scrappercent_0"
+                    },
+                    "propConfig": {
+                      "props.style.color": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.scrapPercent"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tif value \u003e 5 and value \u003c 10: # scrap between range 0 end and range 1 end\n\t\tcolor \u003d \"#FF8C00\" # orange, warning\n\telif value \u003e\u003d 5: # if scrap is less than range 0 end\n\t\tcolor \u003d \"#FF0000\" # red, bad\n\telif value \u003c\u003d 10: # scrap greater than range 2 start\n\t\tcolor \u003d \"#00AC00\"\n\t\n\treturn color",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "round({view.custom.quality.value},1) + \u0027%\u0027"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "fontSize": 20,
+                        "fontWeight": "normal",
+                        "textAlign": "left"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "quality"
+                },
+                "position": {
+                  "basis": "53px",
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "justify": "center",
+                  "style": {
+                    "marginBottom": "0.25rem",
+                    "marginLeft": "0.25rem",
+                    "marginRight": "0.25rem",
+                    "marginTop": "0.25rem",
+                    "overflow": "visible"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "legend_1"
+            },
+            "position": {
+              "basis": "110px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.showLegend"
+                  },
+                  "overlayOptOut": true,
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "alignContent": "flex-start",
+              "alignItems": "flex-start",
+              "direction": "column",
+              "justify": "space-around",
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "oee"
+            },
+            "position": {
+              "basis": "297px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "fontSize": 24,
+                "textAlign": "left"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "title_0"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "Cards/header",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "breakStart",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\tself.view.params.fontSizeSmall \u003d payload[\u0027fontSizeSmall\u0027]\n#\tlog \u003d system.util.getLogger(\u0027breakStart\u0027)\n#\tlog.info(str(self.view.params.fontSizeSmall))",
+          "sessionScope": false,
+          "viewScope": true
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

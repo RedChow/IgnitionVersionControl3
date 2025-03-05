@@ -1,0 +1,69 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 836,
+      "width": 1092
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "contextMenu": {
+            "enabled": true
+          },
+          "name": "EquipmentSchedule"
+        },
+        "position": {
+          "height": 500,
+          "rotate": {
+            "anchor": "50% 75%"
+          },
+          "width": 1036,
+          "x": 23,
+          "y": 201
+        },
+        "type": "ia.display.equipmentschedule"
+      },
+      {
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "height": 30,
+          "width": 30,
+          "x": 107,
+          "y": 94
+        },
+        "props": {
+          "path": "material/insert_chart"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_0"
+        },
+        "position": {
+          "height": 30,
+          "rotate": {
+            "anchor": "303% 140%"
+          },
+          "width": 30,
+          "x": 270,
+          "y": 124
+        },
+        "props": {
+          "path": "material/align_vertical_top"
+        },
+        "type": "ia.display.icon"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.coord"
+  }
+}

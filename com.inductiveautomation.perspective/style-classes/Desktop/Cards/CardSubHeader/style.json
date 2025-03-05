@@ -1,0 +1,16 @@
+{
+  "base": {
+    "style": {
+      "borderBottomStyle": "solid",
+      "borderBottomWidth": "1px",
+      "color": "#808080",
+      "fontSize": "16px",
+      "fontStyle": "normal",
+      "fontWeight": "bold",
+      "margin": "12px",
+      "outlineColor": "#B0B0B0",
+      "padding": "0",
+      "textAlign": "left"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "base": {
+    "style": {
+      "color": "inherit",
+      "cursor": "pointer",
+      "fontFamily": "Roboto",
+      "fontSize": "16px",
+      "fontWeight": "normal",
+      "paddingLeft": "0.25em",
+      "paddingRight": "0.25em",
+      "textOverflow": "ellipsis",
+      "textTransform": "capitalize"
+    }
+  }
+}

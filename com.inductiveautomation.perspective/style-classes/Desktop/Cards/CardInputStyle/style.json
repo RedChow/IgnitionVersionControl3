@@ -1,0 +1,24 @@
+{
+  "base": {
+    "style": {
+      "color": "#2B2B2B",
+      "fontFamily": "emigre",
+      "textAlign": "center"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "disabled",
+      "style": {
+        "backgroundColor": "#F1F1F1",
+        "color": "#8C8C8C"
+      }
+    },
+    {
+      "pseudo": "hover",
+      "style": {
+        "backgroundColor": "#E1E1E1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "base": {
+    "style": {
+      "color": "#2B2B2B",
+      "fontFamily": "roboto",
+      "fontSize": "15px",
+      "textAlign": "left",
+      "textIndent": "10px"
+    }
+  }
+}
