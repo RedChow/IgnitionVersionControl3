@@ -40,6 +40,27 @@
           }
         },
         "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_0"
+        },
+        "position": {
+          "basis": "320px"
+        },
+        "props": {
+          "path": "navigation/GlobalNav"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_1"
+        },
+        "position": {
+          "basis": "320px"
+        },
+        "type": "ia.display.view"
       }
     ],
     "meta": {
