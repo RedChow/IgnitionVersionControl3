@@ -20,16 +20,6 @@
               "grow": 1
             },
             "propConfig": {
-              "props.itemStyle.backgroundColor": {
-                "binding": {
-                  "config": {
-                    "fallbackDelay": 2.5,
-                    "mode": "direct",
-                    "tagPath": "[default]ProjectGlobals/colors/primary_shade"
-                  },
-                  "type": "tag"
-                }
-              },
               "props.itemStyle.borderColor": {
                 "binding": {
                   "config": {
@@ -43,6 +33,7 @@
             },
             "props": {
               "itemStyle": {
+                "backgroundColor": "#859DBF",
                 "borderStyle": "solid",
                 "borderWidth": 1,
                 "fontSize": 14,
@@ -1404,7 +1395,7 @@
                       "label": "Q",
                       "value": ".2"
                     },
-                    "refresh": false,
+                    "refresh": true,
                     "title": "OEE"
                   },
                   "path": "mockups/oeeGauge_overview"
